@@ -1,0 +1,135 @@
+*, *::before, *::after {
+            box-sizing: border-box;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        header {
+    background: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+        /* Container Layout */
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }header .logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+
+
+  
+
+        h1 {
+            color: #1a365d;
+            font-size: 20pt;
+            margin: 0 0 10px 0;
+        }
+
+        .subtitle {
+            font-size: 12pt;
+            color: #7f8c8d;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin: 0;
+        }
+
+        /* Section Headings with Left Border Accent */
+        h2 {
+            color: #2b6cb0;
+            font-size: 16pt;
+            border-left: 4px solid #3182ce;
+            padding-left: 12px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            font-size: 11pt;
+            color: #4a5568;
+            margin-bottom: 20px;
+        }
+
+        /* Blocks for Skills Layout */
+        .skills-grid {
+            display: block;
+            margin-top: 15px;
+        }
+
+        .skill-category {
+            background-color: #f7fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 15px;
+        }
+
+        .skill-category h3 {
+            margin: 0 0 10px 0;
+            font-size: 12pt;
+            color: #2d3748;
+        }
+
+        .skill-tags {
+            font-size: 10.5pt;
+            color: #4a5568;
+            font-weight: 500;
+        }
+
+        /* Call To Action Buttons */
+        .cta-container {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .portfolio-btn {
+            display: inline-block;
+            background-color: #3182ce;
+            color: #ffffff;
+            padding: 12px 30px;
+            font-size: 11pt;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 6px;
+            box-shadow: 0 3px 6px rgba(49, 130, 206, 0.2);
+        }
+
+        .portfolio-btn:hover {
+            background-color: #2b6cb0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 9.5pt;
+            color: #a0aec0;
+            border-top: 1px solid #edf2f7;
+            padding-top: 20px;
+        }

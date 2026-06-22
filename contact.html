@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me | Mohamed Rafiq.M</title>
+    <style>
+        /* Base Setup & Corporate Palette */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .title-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title-section h1 {
+            color: #1a365d;
+            font-size: 24pt;
+            margin-bottom: 5px;
+        }
+
+        .title-section p {
+            color: #7f8c8d;
+            font-size: 11pt;
+        }
+
+        /* Main Contact Wrapper Grid */
+        .contact-container {
+            max-width: 800px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            overflow: hidden;
+        }
+
+        /* Left Side: Contact Details Box */
+        .contact-info-panel {
+            background-color: #1a365d;
+            color: #ffffff;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .contact-info-panel h2 {
+            font-size: 16pt;
+            margin-bottom: 20px;
+            color: #63b3ed;
+        }
+
+        .info-item {
+            margin-bottom: 25px;
+        }
+
+        .info-item h3 {
+            font-size: 10.5pt;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #a0aec0;
+            margin-bottom: 5px;
+        }
+
+        .info-item p, .info-item a {
+            font-size: 11pt;
+            color: #edf2f7;
+            text-decoration: none;
+        }
+
+        .info-item a:hover {
+            color: #63b3ed;
+            text-decoration: underline;
+        }
+
+        /* Right Side: Interactive Form */
+        .contact-form-panel {
+            padding: 40px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 10pt;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #4a5568;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px 12px;
+            font-size: 11pt;
+            border: 1px solid #cbd5e0;
+            border-radius: 6px;
+            background-color: #f7fafc;
+            color: #2d3748;
+            outline: none;
+            transition: border-color 0.2s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #3182ce;
+            background-color: #ffffff;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        /* Form Submit Button */
+        .submit-btn {
+            width: 100%;
+            background-color: #3182ce;
+            color: #ffffff;
+            border: none;
+            padding: 12px;
+            font-size: 11pt;
+            font-weight: 600;
+            border-radius: 6px;
+            cursor: pointer;
+            box-shadow: 0 3px 6px rgba(49, 130, 206, 0.2);
+            transition: background-color 0.2s ease;
+        }
+
+        .submit-btn:hover {
+            background-color: #2b6cb0;
+        }
+
+        /* Home Button Link */
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            text-decoration: none;
+            color: #3182ce;
+            font-weight: 600;
+            font-size: 11pt;
+        }
+
+        .back-btn:hover {
+            text-underline-offset: 3px;
+            text-decoration: underline;
+        }
+
+        /* Responsive Breakpoint for Mobile Screen Sizes */
+        @media (max-width: 768px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .contact-info-panel {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-section">
+        <h1>Get In Touch</h1>
+        <p>Let's collaborate on data analytics or web projects</p>
+    </div>
+
+    <div class="contact-container">
+        
+        <div class="contact-info-panel">
+            <div>
+                <h2>Contact Information</h2>
+                
+                <div class="info-item">
+                    <h3>Location</h3>
+                    <p>No.383, 5th Main Road,M.K.B Nagar, Vyasarpadi, Chennai-600 039.</p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Email</h3>
+                    <p><a href="https://mail.google.com/mail/u/0/#inbox?compose=new">mohamedrafiqm3@gmail.com</a></p>
+                </div>
+
+                <div class="info-item">
+                    <h3>Professional Networks</h3>
+                    <p><a href="https://github.com/mohamedrafiqm3-max" target="_blank">GitHub Profile</a></p>
+                    <p style="margin-top: 5px;"><a href="https://www.linkedin.com/in/mohamed-rafiq-m-221591351" target="_blank">LinkedIn Profile</a></p>
+                </div>
+            </div>
+            
+            <div class="info-item" style="margin-bottom: 0;">
+                <p style="font-size: 9.5pt; color: #a0aec0;">Looking  for internship and analytics roles.</p>
+            </div>
+        </div>
+
+        <div class="contact-form-panel">
+            <form action="https://formsubmit.co/mohamedrafiqm3@gmail.com" method="POST">
+                
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="Your Name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="name@company.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="How can I help you?" required></textarea>
+                </div>
+
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+
+    <a href="home.html" class="back-btn">← Back to Homepage</a>
+
+</body>
+</html>

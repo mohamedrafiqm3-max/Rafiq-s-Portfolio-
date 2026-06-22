@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Certificates | Mohamed Rafiq.M</title>
+    <style>
+        /* Base Setup & Corporate Palette */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #2c3e50;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .title-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .title-section h1 {
+            color: #1a365d;
+            font-size: 24pt;
+            margin-bottom: 5px;
+        }
+
+        .title-section p {
+            color: #7f8c8d;
+            font-size: 11pt;
+        }
+
+        /* Slideshow Container */
+        .slideshow-container {
+            max-width: 700px;
+            width: 100%;
+            position: relative;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+        }
+
+        /* Hide slides by default */
+        .mySlides {
+            display: none;
+            text-align: center;
+        }
+
+        /* Fade Animation for transitions */
+        .fade {
+            animation-name: fadeAnimation;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes fadeAnimation {
+            from { opacity: 0.4; } 
+            to { opacity: 1; }
+        }
+
+        /* Certificate Image Styling */
+        .certificate-img {
+            width: 100%;
+            height: auto;
+            max-height: 450px;
+            object-fit: contain;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            margin-bottom: 15px;
+        }
+
+        /* Certificate Details Text */
+        .cert-title {
+            font-size: 14pt;
+            color: #2b6cb0;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .cert-vendor {
+            font-size: 11pt;
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+
+        /* Navigation Arrows (Prev & Next) */
+        .prev, .next {
+            cursor: pointer;
+            position: absolute;
+            top: 40%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: #3182ce;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.3s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+            text-decoration: none;
+        }
+
+        .next {
+            right: 20px;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev {
+            left: 20px;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(49, 130, 206, 0.1);
+            color: #1a365d;
+        }
+
+        /* Dot Indicators */
+        .dot-container {
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 12px;
+            width: 12px;
+            margin: 0 4px;
+            background-color: #cbd5e0;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.3s ease;
+        }
+
+        .active, .dot:hover {
+            background-color: #3182ce;
+        }
+
+        /* Home Navigation Button */
+        .back-btn {
+            margin-top: 25px;
+            display: inline-block;
+            text-decoration: none;
+            color: #3182ce;
+            font-weight: 600;
+            font-size: 11pt;
+        }
+
+        .back-btn:hover {
+            text-decoration: underline;
+        }
+        header .logo {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+nav a:hover {
+    color: #007bff;
+}
+    </style>
+</head>
+<body>
+ 
+
+    <div class="title-section">
+        <h1>Professional Certifications</h1>
+        <p>Verified technical expertise and professional credentials</p>
+    </div>
+
+    <!-- Main Slideshow Structure -->
+    <div class="slideshow-container">
+
+        <!-- Slide 1: Introduction to GST -->
+        <div class="mySlides fade">
+            <img src="nptel.png" class="certificate-img" alt="Introduction to GST">
+            <div class="cert-title">Introduction to GST</div>
+            <div class="cert-vendor">NPTEL Online Certification (Swayam)</div>
+        </div>
+
+        <!-- Slide 2: MongoDB -->
+        <div class="mySlides fade">
+            <img src="mango.png" class="certificate-img" alt="MongoDB and AI Fundamentals">
+            <div class="cert-title">MongoDB and AI Fundamentals</div>
+            <div class="cert-vendor">ICT Academy Learnathon 2025</div>
+        </div>
+
+        <!-- Slide 3: Data Science -->
+        <div class="mySlides fade">
+            <img src="data.png" class="certificate-img" alt="Data Science & Analytics">
+            <div class="cert-title">Data Science & Analytics</div>
+            <div class="cert-vendor">HP LIFE / HP Foundation</div>
+        </div>
+
+        <!-- Slide 4: Human Resource Management -->
+        <div class="mySlides fade">
+            <img src="Screenshot 2026-06-22 153702.png" class="certificate-img" alt="Introduction to Human Resources Management">
+            <div class="cert-title">Introduction to Human Resources Management</div>
+            <div class="cert-vendor">Udemy (MTF Institute of Management, Technology and Finance)</div>
+        </div>
+
+        <!-- Slide 5: Data Protection Officer -->
+        <div class="mySlides fade">
+            <img src="dop.png" class="certificate-img" alt="Certified Data Protection Officer (CDPO) Training">
+            <div class="cert-title">Certified Data Protection Officer (CDPO) Training</div>
+            <div class="cert-vendor">Udemy (Bespoke Learning Solutions)</div>
+        </div>
+
+        
+
+        <!-- Navigation arrows -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <!-- 6 Dot Indicators representing each slide -->
+    <div class="dot-container">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        <span class="dot" onclick="currentSlide(5)"></span>
+    
+    </div>
+
+    <a href="home.html" class="back-btn">← Back to Homepage</a>
+
+    <!-- Automated JavaScript Engine -->
+    <script>
+        let slideIndex = 1;
+        let slideTimer;
+
+        // Initialize slideshow
+        showSlides(slideIndex);
+        resetTimer();
+
+        // Next/previous manual controls
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+            resetTimer(); 
+        }
+
+        // Dot controls
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+            resetTimer();
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+            
+            if (n > slides.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = slides.length}
+            
+            // Hide all slide elements
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            // Remove active style from all dots
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            // Display targeted block item and highlight corresponding dot
+            slides[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " active";
+        }
+
+        // Automatic Slide Loop Function
+        function resetTimer() {
+            clearInterval(slideTimer); 
+            slideTimer = setInterval(function() {
+                slideIndex++;
+                showSlides(slideIndex);
+            }, 3000); // Transitions automatically every 3 seconds
+        }
+    </script>
+
+</body>
+</html>
