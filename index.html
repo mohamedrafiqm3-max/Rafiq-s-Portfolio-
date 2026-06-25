@@ -5,164 +5,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Modern styling for the language dropdown inside header */
-        .lang-select {
-            padding: 5px 10px;
-            font-size: 10pt;
-            border-radius: 4px;
-            border: 1px solid #cbd5e0;
-            background-color: #ffffff;
-            color: #2c3e50;
-            cursor: pointer;
-            margin-left: 15px;
-            outline: none;
-        }
-        .lang-select:focus {
-            border-color: #3182ce;
-        }
-    </style>
 </head>
 <body>
 
+    <!-- Header Navigation -->
     <header>
         <div class="logo">My Portfolio</div>
-        <nav style="display: flex; align-items: center;">
+        <nav>
             <a href="index.html">Home</a>
             <a href="about.html">About</a>
             <a href="certificate.html">Certificate</a>
             <a href="contact.html">Contact</a>
-            
-            <select id="language-switcher" class="lang-select" onchange="manualLanguageChange()">
-                <option value="en">English</option>
-                <option value="ta">Tamil</option>
-                <option value="ja">Japanese</option>
-            </select>
         </nav>
     </header>
-
     <div class="profile-container">
-        <img src="13.JPG" alt="Mohamed Rafiq.M Profile Photo" class="profile-pic">
-    </div>
+    <!-- Replace 'my-photo.jpg' with your actual image file name -->
+    <img src="13.JPG" alt="Mohamed Rafiq.M Profile Photo" class="profile-pic">
+</div>
 
+    <!-- Hero Introduction Section -->
     <section id="about" class="hero">
-        <h1 id="hero-title">Hi, I'm a Mohamed Rafiq.M [ B.Com (Computer Applications) ] Student</h1>
-        <p id="hero-desc">I bridge the gap between business management and technical data analytics. Welcome to my personal digital showroom.</p>
+        <h1>Hi, I'm a Mohamed Rafiq.M[ B.Com (Computer Applications) ]Student</h1>
+        <p>I bridge the gap between business management and technical data analytics. Welcome to my personal digital showroom.</p>
     </section>
 
+    <!-- Projects Grid Section -->
     <section id="projects" class="projects-section">
-        <h2 id="section-title">Featured Work</h2>
+        <h2>Featured Work</h2>
         <div class="grid">
            
             <div class="card">
-                <h3 id="card1-title">Resume</h3>
-                <p id="card1-desc">Check out my Resume.</p>
-                <a href="https://github.com/mohamedrafiqm3-max/Rafiq-s-Portfolio-/blob/main/Rafiq%20Resume.pdf" class="btn" id="card1-btn">View Resume</a>
+                <h3>Resume</h3>
+                <p>Check out my Resume.</p>
+                <a href="https://github.com/mohamedrafiqm3-max/Rafiq-s-Portfolio-/blob/main/Rafiq%20Resume.pdf" class="btn">View Resume</a>
             </div>
-
-            <div class="card">
-                <h3 id="card2-title">Content Creation & Editing</h3>
-                <p id="card2-desc">My gaming YouTube channel where I manage video editing pipelines and monitor channel performance analytics.</p>
-                <a href="https://youtube.com/@rtechphoenix-k5h?si=IEVnomGkHhIXiDLG" class="btn" id="card2-btn">Watch Content</a>
+             <div class="card">
+             <h3>Content Creation & Editing</h3>
+                <p>My gaming YouTube channel where I manage video editing pipelines and monitor channel performance analytics.</p>
+                <a href="https://youtube.com/@rtechphoenix-k5h?si=IEVnomGkHhIXiDLG" class="btn">Watch Content</a>
             </div>
-
-            <div class="card">
-                <h3 id="card3-title">Internship Report</h3>
-                <p id="card3-desc">Check out my Internship Report</p>
-                <a href="https://github.com/mohamedrafiqm3-max/Rafiq-s-Portfolio-/blob/main/Lotus%20company%20internship%20report.pdf" class="btn" id="card3-btn">View Report</a>
+             <div class="card">
+             <h3>Internship Report</h3>
+                <p>Check out my Internship Report</p>
+                <a href="https://github.com/mohamedrafiqm3-max/Rafiq-s-Portfolio-/blob/main/Lotus%20company%20internship%20report.pdf" class="btn">View Report</a>
             </div>
              
+           
         </div>
     </section>
 
+    <!-- Contact Footer -->
     <footer id="contact">
-        <h2 id="footer-title">Let's Connect</h2>
-        <p>Email: mohamedrafiqmt9@gmail.com, mohamedrafiq3@gmail.com</p>
-        <p><a href="https://www.linkedin.com/in/mohamed-rafiq-m-221591351" id="footer-link">Connect on LinkedIn</a></p>
+        <h2>Let's Connect</h2>
+        <p>Email: mohamedrafiqmt9@gmail.com,mohamedrafiq3@gmail.com</p>
+        <p><a href="https://www.linkedin.com/in/mohamed-rafiq-m-221591351">Connect on LinkedIn</a></p>
     </footer>
-
-    <script>
-        // The core translation dictionary object mappings
-        const translations = {
-            en: {
-                "hero-title": "Hi, I'm a Mohamed Rafiq.M [ B.Com (Computer Applications) ] Student",
-                "hero-desc": "I bridge the gap between business management and technical data analytics. Welcome to my personal digital showroom.",
-                "section-title": "Featured Work",
-                "card1-title": "Resume",
-                "card1-desc": "Check out my Resume.",
-                "card1-btn": "View Resume",
-                "card2-title": "Content Creation & Editing",
-                "card2-desc": "My gaming YouTube channel where I manage video editing pipelines and monitor channel performance analytics.",
-                "card2-btn": "Watch Content",
-                "card3-title": "Internship Report",
-                "card3-desc": "Check out my Internship Report",
-                "card3-btn": "View Report",
-                "footer-title": "Let's Connect",
-                "footer-link": "Connect on LinkedIn"
-            },
-            ta: {
-                "hero-title": "வணக்கம், நான் முஹம்மது ரஃபீக்.M [ பி.காம் (கணினி பயன்பாடுகள்) ] மாணவர்",
-                "hero-desc": "வணிக நிர்வாகத்திற்கும் தொழில்நுட்ப தரவு பகுப்பாய்விற்கும் இடையே உள்ள இடைவெளியை நான் இணைக்கிறேன். எனது தனிப்பட்ட டிஜிட்டல் காட்சி அறைக்கு உங்களை வரவேற்கிறேன்.",
-                "section-title": "சிறப்புப் படைப்புகள்",
-                "card1-title": "சுயவிவரக் குறிப்பு (Resume)",
-                "card1-desc": "எனது சுயவிவரக் குறிப்பைப் பார்க்கவும்.",
-                "card1-btn": "சுயவிவரம் பார்க்க",
-                "card2-title": "உள்ளடக்க உருவாக்கம் மற்றும் எடிட்டிங்",
-                "card2-desc": "எனது கேமிங் யூடியூப் சேனல், அங்கு நான் வீடியோ எடிட்டிங் பணிகளை நிர்வகிக்கிறேன் மற்றும் சேனல் செயல்திறன் பகுப்பாய்வுகளைக் கண்காணிக்கிறேன்.",
-                "card2-btn": "வீடியோ பார்க்க",
-                "card3-title": "இன்டர்ன்ஷிப் அறிக்கை",
-                "card3-desc": "எனது இன்டர்ன்ஷிப் அறிக்கையைப் பார்க்கவும்.",
-                "card3-btn": "அறிக்கை பார்க்க",
-                "footer-title": "தொடர்பு கொள்ள",
-                "footer-link": "LinkedIn இல் இணையுங்கள்"
-            },
-            ja: {
-                "hero-title": "こんにちは、私はモハメド・ラフィーク・M［B.Com（コンピュータアプリケーション）］の学生です",
-                "hero-desc": "私はビジネス管理とテクニカルデータ分析の架け橋となります。私の個人のデジタルショールームへようこそ。",
-                "section-title": "注目の作品",
-                "card1-title": "履歴書",
-                "card1-desc": "私の履歴書をチェックしてください。",
-                "card1-btn": "履歴書を見る",
-                "card2-title": "コンテンツ制作＆編集",
-                "card2-desc": "私のゲーム用YouTubeチャンネルでは、動画編集パイプラインの管理やチャンネルのパフォーマンス分析のモニタリングを行っています。",
-                "card2-btn": "コンテンツを見る",
-                "card3-title": "インターンシップレポート",
-                "card3-desc": "インターンシップレポートをチェックしてください。",
-                "card3-btn": "レポートを見る",
-                "footer-title": "つながりましょう",
-                "footer-link": "LinkedInでつながる"
-            }
-        };
-
-        // Apply translations based on target key code
-        function applyTranslations(lang) {
-            const elements = document.querySelectorAll("[id]");
-            elements.forEach(element => {
-                if (translations[lang] && translations[lang][element.id]) {
-                    element.innerText = translations[lang][element.id];
-                }
-            });
-            // Update selected indicator on layout dropdown 
-            document.getElementById("language-switcher").value = lang;
-        }
-
-        // Automatic Check on load strategy
-        window.addEventListener("DOMContentLoaded", () => {
-            let browserLang = navigator.language || navigator.userLanguage;
-            browserLang = browserLang.substring(0, 2); // Get "en", "ta", or "ja"
-            
-            // Assign fallback to english if system code doesn't match dictionary options
-            const finalLanguage = translations[browserLang] ? browserLang : 'en';
-            applyTranslations(finalLanguage);
-        });
-
-        // Dropdown interactive manual control logic
-        function manualLanguageChange() {
-            const selectedLang = document.getElementById("language-switcher").value;
-            applyTranslations(selectedLang);
-        }
-    </script>
 
 </body>
 </html>
-
