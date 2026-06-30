@@ -154,3 +154,18 @@ footer a {
     color: #007bff;
     text-decoration: none;
 }
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #0073e6; /* Professional blue */
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background-color: #0052a3; /* Darker blue on hover */
+}
