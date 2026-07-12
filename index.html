@@ -5,6 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Embedded layout tweak to ensure the Excel preview container scales nicely */
+        .excel-preview-container {
+            width: 100%;
+            height: 300px;
+            margin-top: 15px;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+        }
+        .excel-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
 </head>
 <body>
 
@@ -19,18 +35,18 @@
         </nav>
     </header>
     <div class="profile-container">
-    <!-- Replace 'my-photo.jpg' with your actual image file name -->
-    <img src="13.JPG" alt="Mohamed Rafiq.M Profile Photo" class="profile-pic">
-</div>
+        <!-- Replace '13.JPG' with your actual image file name -->
+        <img src="13.JPG" alt="Mohamed Rafiq.M Profile Photo" class="profile-pic">
+    </div>
 
     <!-- Hero Introduction Section -->
     <section id="about" class="hero">
-        <h1>Hi, I'm a Mohamed Rafiq.M[ B.Com (Computer Applications) ]Student</h1>
-        <p>​"Hi, I'm a professional who blends business management, data analytics, and modern web development. Equipped with a technical toolkit that ranges from building web interfaces (HTML5, CSS3, MySQL) to executing advanced data analysis (Power BI, SPSS, Excel), I create data-backed digital solutions. I also specialize in workflow optimization through cutting-edge AI automation tools and run data-driven multimedia content strategies. Welcome to my personal digital showroom."</p>
+        <h1>Hi, I'm Mohamed Rafiq.M [ B.Com (Computer Applications) ] Student</h1>
+        <p>"Hi, I'm a professional who blends business management, data analytics, and modern web development. Equipped with a technical toolkit that ranges from building web interfaces (HTML5, CSS3, MySQL) to executing advanced data analysis (Power BI, SPSS, Excel), I create data-backed digital solutions. I also specialize in workflow optimization through cutting-edge AI automation tools and run data-driven multimedia content strategies. Welcome to my personal digital showroom."</p>
     </section>
 
     <!-- Projects Grid Section -->
-        <section id="projects" class="projects-section">
+    <section id="projects" class="projects-section">
         <h2>Featured Work</h2>
         <div class="grid">
            
@@ -38,6 +54,13 @@
                 <h3>Resume</h3>
                 <p>Check out my Resume.</p>
                 <a href="https://raw.githubusercontent.com/mohamedrafiqm3-max/Rafiq-s-Portfolio-/main/Rafiq%20Resume.pdf" download="Mohamed_Rafiq_Resume.pdf" class="btn">Download Resume</a>
+            </div>
+
+            <!-- NEW EXCEL MINI PROJECT CARD -->
+            <div class="card">
+                <h3>Excel Data Analytics Mini-Project</h3>
+                <p>An interactive, web-formatted spreadsheet showcase displaying raw business parameters transformed into functional data dashboards.</p>
+               <a href="your-excel-project.html" target="_blank" class="btn" style="margin-top: 15px;">Open Full Page Project</a>
             </div>
 
             <div class="card">
@@ -55,11 +78,10 @@
         </div>
     </section>
 
-
     <!-- Contact Footer -->
     <footer id="contact">
         <h2>Let's Connect</h2>
-        <p>Email: mohamedrafiqmt9@gmail.com,mohamedrafiq3@gmail.com</p>
+        <p>Email: mohamedrafiqmt9@gmail.com, mohamedrafiq3@gmail.com</p>
         <p><a href="https://www.linkedin.com/in/mohamed-rafiq-m-221591351">Connect on LinkedIn</a></p>
     </footer>
 
