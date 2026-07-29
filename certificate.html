@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -102,6 +102,7 @@
         .mySlides:nth-of-type(6) .certificate-img:hover { border-color: #38a169; transform: scale(1.02); } /* Green accent */
         .mySlides:nth-of-type(7) .certificate-img:hover { border-color: #b83280; transform: scale(1.02); } /* Pink/Magenta accent */
         .mySlides:nth-of-type(8) .certificate-img:hover { border-color: #0056b3; transform: scale(1.02); } /* HP Deep Blue accent */
+        .mySlides:nth-of-type(9) .certificate-img:hover { border-color: #00a8e8; transform: scale(1.02); } /* HP Cyan accent */
 
         /* Certificate Details Text */
         .cert-title {
@@ -175,6 +176,7 @@
         .dot:nth-of-type(6).active { background-color: #38a169; transform: scale(1.3); }
         .dot:nth-of-type(7).active { background-color: #b83280; transform: scale(1.3); }
         .dot:nth-of-type(8).active { background-color: #0056b3; transform: scale(1.3); }
+        .dot:nth-of-type(9).active { background-color: #00a8e8; transform: scale(1.3); }
 
         /* Home Navigation Button */
         .back-btn {
@@ -252,8 +254,15 @@
 
         <!-- Slide 8: AI for Business Professionals -->
         <div class="mySlides grow-color">
-            <img src="Screenshot_20260725_165958_Drive.jpg" class="certificate-img" alt="AI for Business Professionals">
+            <img src="1001425589.jpg" class="certificate-img" alt="AI for Business Professionals">
             <div class="cert-title" style="color: #0056b3;">AI for Business Professionals</div>
+            <div class="cert-vendor">HP LIFE / HP Foundation</div>
+        </div>
+
+        <!-- Slide 9: AI for Beginners -->
+        <div class="mySlides grow-color">
+            <img src="1001430710.jpg" class="certificate-img" alt="AI for Beginners">
+            <div class="cert-title" style="color: #00a8e8;">AI for Beginners</div>
             <div class="cert-vendor">HP LIFE / HP Foundation</div>
         </div>
 
@@ -262,7 +271,7 @@
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
-    <!-- 8 Dot Indicators representing each slide -->
+    <!-- 9 Dot Indicators representing each slide -->
     <div class="dot-container">
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
@@ -272,6 +281,7 @@
         <span class="dot" onclick="currentSlide(6)"></span>
         <span class="dot" onclick="currentSlide(7)"></span>
         <span class="dot" onclick="currentSlide(8)"></span>
+        <span class="dot" onclick="currentSlide(9)"></span>
     </div>
 
     <a href="index.html" class="back-btn">← Back to Homepage</a>
