@@ -131,4 +131,64 @@ function getBotResponse(input) {
         return "I'm not sure about that specific query, but you can reach Mohamed directly via email at <b>mohamedrafiqmt9@gmail.com</b> or check out his certificates on the main menu!";
     }
 }
-      
+
+// Helper to decode JWT token returned by Google
+function parseJwt(token) {
+    const base64Url = token.split('.')[1];
+    const base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+    const jsonPayload = decodeURIComponent(
+        atob(base64)
+            .split('')
+            .map((c) => '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2))
+            .join('')
+    );
+    return JSON.parse(jsonPayload);
+}
+
+// Callback triggered when Google Sign-In succeeds
+function handleCredentialResponse(response) {
+    // Decode the ID token payload
+    const responsePayload = parseJwt(response.credential);
+
+    console.log("Logged in user:", responsePayload);
+
+    // Save user session in localStorage
+    localStorage.setItem("google_user", JSON.stringify(responsePayload));
+
+    // Update UI with user info
+    updateUserUI(responsePayload);
+}
+
+// Update Header / UI elements after sign-in
+function updateUserUI(user) {
+    const googleBtn = document.querySelector('.g_id_signin');
+    const userInfo = document.getElementById('user-info');
+    const userName = document.getElementById('user-name');
+    const userAvatar = document.getElementById('user-avatar');
+
+    if (user) {
+        if (googleBtn) googleBtn.style.display = 'none';
+        if (userInfo) userInfo.style.display = 'flex';
+        if (userName) userName.textContent = `Hi, ${user.given_name}`;
+        if (userAvatar) userAvatar.src = user.picture;
+    } else {
+        if (googleBtn) googleBtn.style.display = 'block';
+        if (userInfo) userInfo.style.display = 'none';
+    }
+}
+
+// Log out user
+function logoutGoogle() {
+    localStorage.removeItem("google_user");
+    google.accounts.id.disableAutoSelect();
+    updateUserUI(null);
+}
+
+// Auto-login on page load if user previously signed in
+document.addEventListener("DOMContentLoaded", () => {
+    const savedUser = localStorage.getItem("google_user");
+    if (savedUser) {
+        updateUserUI(JSON.parse(savedUser));
+    }
+});
+
