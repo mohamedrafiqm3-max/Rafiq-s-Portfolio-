@@ -142,9 +142,31 @@ function handleCredentialResponse(response) {
     updateUserUI(responsePayload);
 }
 
+// Explicitly initialize Google Sign-In API when SDK loads
+window.onload = function () {
+    if (window.google && google.accounts && google.accounts.id) {
+        google.accounts.id.initialize({
+            client_id: "901088483523-vhem1646erdia3e9ebn8lt6vo3qm5knp.apps.googleusercontent.com",
+            callback: handleCredentialResponse
+        });
+
+        // Render the button explicitly into the div container
+        google.accounts.id.renderButton(
+            document.getElementById("google-btn-container"),
+            { theme: "outline", size: "medium", shape: "rectangular" }
+        );
+    }
+
+    // Check for saved login session
+    const savedUser = localStorage.getItem("google_user");
+    if (savedUser) {
+        updateUserUI(JSON.parse(savedUser));
+    }
+};
+
 // Update Header UI elements after sign-in / sign-out
 function updateUserUI(user) {
-    const googleBtn = document.querySelector('.g_id_signin');
+    const googleBtn = document.getElementById('google-btn-container');
     const userInfo = document.getElementById('user-info');
     const userName = document.getElementById('user-name');
     const userAvatar = document.getElementById('user-avatar');
@@ -168,4 +190,3 @@ function logoutGoogle() {
     }
     updateUserUI(null);
 }
-            
