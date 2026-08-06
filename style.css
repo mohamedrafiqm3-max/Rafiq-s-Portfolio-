@@ -18,39 +18,12 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 10%;
+    padding: 15px 10%;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-/* Center the profile container nicely */
-.profile-container {
-    text-align: center;
-    margin: 30px auto;
+    flex-wrap: wrap;
+    gap: 15px;
 }
 
-/* Base style for your square image */
-.profile-pic {
-    width: 150px;               /* Adjust width as needed */
-    height: 150px;              /* Must be equal to width to keep it perfectly square */
-    object-fit: cover;          /* Prevents your photo from stretching out of proportion */
-    border-radius: 50%;         /* Transforms the square into a perfect circle */
-    border: 3px solid #3182ce;  /* Clean corporate blue outline border */
-    
-    /* Smooth animation configuration for the glow transition */
-    transition: all 0.4s ease-in-out;
-    cursor: pointer;
-}
-
-/* Glow Effect triggers on hover (mouse) and active (mobile screen touch) */
-.profile-pic:hover, 
-.profile-pic:active {
-    border-color: #63b3ed;      /* Subtle lighter blue color transition on border */
-    
-    /* Creates a beautiful neon-like outer corporate blue glow glow */
-    box-shadow: 0 0 20px rgba(49, 130, 206, 0.6), 
-                0 0 40px rgba(49, 130, 206, 0.4);
-                
-    transform: scale(1.03);     /* Slightly enlarges the image by 3% for a dynamic interactive feel */
-}
 header .logo {
     font-weight: bold;
     font-size: 1.2rem;
@@ -68,6 +41,75 @@ nav a:hover {
     color: #007bff;
 }
 
+/* Google Auth Container & Badges */
+#auth-container {
+    display: flex;
+    align-items: center;
+}
+
+.g_id_signin {
+    display: inline-block;
+    min-height: 40px;
+}
+
+#user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#user-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #cbd5e0;
+}
+
+#user-name {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.logout-btn {
+    background-color: #e53e3e;
+    color: white;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background 0.2s;
+}
+
+.logout-btn:hover {
+    background-color: #c53030;
+}
+
+/* Profile Picture Container */
+.profile-container {
+    text-align: center;
+    margin: 30px auto;
+}
+
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #3182ce;
+    transition: all 0.4s ease-in-out;
+    cursor: pointer;
+}
+
+.profile-pic:hover, 
+.profile-pic:active {
+    border-color: #63b3ed;
+    box-shadow: 0 0 20px rgba(49, 130, 206, 0.6), 
+                0 0 40px rgba(49, 130, 206, 0.4);
+    transform: scale(1.03);
+}
 
 /* Hero Section */
 .hero {
@@ -125,39 +167,8 @@ nav a:hover {
 
 .btn {
     display: inline-block;
-    background: #007bff;
-    color: #fff;
-    padding: 8px 16px;
-    border-radius: 4px;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.btn:hover {
-    background: #0056b3;
-}
-
-/* Footer Section */
-footer {
-    background: #222;
-    color: #fff;
-    text-align: center;
-    padding: 40px 20px;
-    margin-top: 60px;
-}
-
-footer h2 {
-    margin-bottom: 15px;
-}
-
-footer a {
-    color: #007bff;
-    text-decoration: none;
-}
-.btn {
-    display: inline-block;
     padding: 10px 20px;
-    background-color: #0073e6; /* Professional blue */
+    background-color: #0073e6;
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
@@ -167,13 +178,10 @@ footer a {
 }
 
 .btn:hover {
-    background-color: #0052a3; /* Darker blue on hover */
+    background-color: #0052a3;
 }
-/* ==========================================
-   Chatbot Widget Styles
-   ========================================== */
 
-/* Floating Toggle Button */
+/* Chatbot Styles */
 .chat-toggle-btn {
     position: fixed;
     bottom: 25px;
@@ -199,7 +207,6 @@ footer a {
     transform: scale(1.08);
 }
 
-/* Chatbot Container Window */
 .chat-window {
     position: fixed;
     bottom: 95px;
@@ -218,7 +225,6 @@ footer a {
     border: 1px solid #e2e8f0;
 }
 
-/* Hide chat window by default */
 .chat-window.hidden {
     opacity: 0;
     visibility: hidden;
@@ -226,7 +232,6 @@ footer a {
     pointer-events: none;
 }
 
-/* Header */
 .chat-header {
     background: linear-gradient(135deg, #007bff, #3182ce);
     color: #ffffff;
@@ -236,21 +241,14 @@ footer a {
     align-items: center;
 }
 
-.chat-header h4 {
-    font-size: 1rem;
-    font-weight: 600;
-}
-
 .chat-close-btn {
     background: none;
     border: none;
     color: #ffffff;
     font-size: 1.2rem;
     cursor: pointer;
-    line-height: 1;
 }
 
-/* Message Display Area */
 .chat-body {
     flex: 1;
     padding: 15px;
@@ -261,7 +259,6 @@ footer a {
     background-color: #f8f9fa;
 }
 
-/* Individual Messages */
 .chat-message {
     max-width: 80%;
     padding: 10px 14px;
@@ -284,7 +281,6 @@ footer a {
     border-bottom-right-radius: 2px;
 }
 
-/* Quick Action Chips */
 .chat-chips {
     display: flex;
     flex-wrap: wrap;
@@ -308,7 +304,6 @@ footer a {
     color: #ffffff;
 }
 
-/* Input Form Area */
 .chat-input-area {
     display: flex;
     padding: 10px;
@@ -325,10 +320,6 @@ footer a {
     font-size: 0.9rem;
 }
 
-.chat-input-area input:focus {
-    border-color: #007bff;
-}
-
 .chat-input-area button {
     background-color: #007bff;
     color: #ffffff;
@@ -338,35 +329,18 @@ footer a {
     border-radius: 6px;
     cursor: pointer;
     font-weight: bold;
-    transition: background-color 0.2s ease;
 }
 
-.chat-input-area button:hover {
-    background-color: #0056b3;
-}
-/* Header alignment adjustments for Google Sign-in */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 15px;
+/* Footer Section */
+footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
 }
 
-.g_id_signin {
-    display: inline-block;
-    min-height: 40px;
+footer a {
+    color: #007bff;
+    text-decoration: none;
 }
-
-#user-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-#user-avatar {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    object-fit: cover;
-}
-
