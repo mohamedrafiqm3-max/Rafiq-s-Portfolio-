@@ -39,7 +39,6 @@ function handleChipClick(topic) {
     let userText = "";
     if (topic === "skills") userText = "What are your skills?";
     else if (topic === "projects") userText = "Tell me about your projects.";
-    else if (topic === "certificates") userText = "What certificates do you have?";
     else if (topic === "contact") userText = "How can I contact you?";
     else if (topic === "resume") userText = "Where can I get your resume?";
 
@@ -60,8 +59,6 @@ function appendMessage(text, sender) {
     chatBody.appendChild(msgDiv);
     chatBody.scrollTop = chatBody.scrollHeight;
 }
-/
-
 
 // Knowledge Base & Keyword Matching
 function getBotResponse(input) {
@@ -71,15 +68,6 @@ function getBotResponse(input) {
     else if (input.includes("project") || input.includes("work")) {
         return "Some featured projects include:<br>• <i>Sustainable Travel Content Calendar</i><br>• <i>Student Skill Course Enrollment Dashboard (Excel)</i><br>• <i>Gaming YouTube Content & Performance Analytics</i>";
     } 
-            // Certifications & Courses
-   else if (input.includes("certif") || input.includes("course") || input.includes("cisco") || input.includes("ibm") || input.includes("hp") || input.includes("p&g") || input.includes("safalta")) {
-        return "Mohamed holds several professional certifications:<br>" +
-               "• <b>HP LIFE:</b> Data Science & Analytics Certificate<br>" +
-               "• <b>Cisco Networking Academy:</b> Data Analytics Essentials<br>" +
-               "• <b>IBM SkillsBuild:</b> AI Fundamentals<br>" +
-               "• <b>P&G Safalta Program:</b> Digital Participation Certificate<br><br>" +
-               "🔗 You can view all certificate details on the <a href='certificate.html' style='color:#007bff;font-weight:bold;'>Certificates Page</a>!";
-    }
     else if (input.includes("contact") || input.includes("email") || input.includes("reach") || input.includes("linkedin")) {
         return "You can reach Mohamed via:<br>📧 Email: <a href='mailto:mohamedrafiqmt9@gmail.com'>mohamedrafiqmt9@gmail.com</a><br>💼 LinkedIn: <a href='https://www.linkedin.com/in/mohamed-rafiq-m-221591351' target='_blank'>Connect here</a>";
     } 
