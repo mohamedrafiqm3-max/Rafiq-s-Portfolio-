@@ -344,4 +344,29 @@ footer a {
 .chat-input-area button:hover {
     background-color: #0056b3;
 }
+/* Header alignment adjustments for Google Sign-in */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.g_id_signin {
+    display: inline-block;
+    min-height: 40px;
+}
+
+#user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#user-avatar {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
