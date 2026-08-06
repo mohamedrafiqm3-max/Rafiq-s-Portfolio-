@@ -1,4 +1,4 @@
-            <!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -8,25 +8,9 @@
     <!-- Favicon Tag -->
     <link rel="icon" type="image/png" href="1001440692-removebg-preview.png">
     <link rel="stylesheet" href="style.css">
-    <style>
-        /* Embedded layout tweak to ensure the Excel preview container scales nicely */
-        .excel-preview-container {
-            width: 100%;
-            height: 300px;
-            margin-top: 15px;
-            border-radius: 8px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
-        }
-        .excel-iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style>
-            <!-- Google Identity Services SDK -->
-<script src="https://accounts.google.com/gsi/client" async defer></script>
 
+    <!-- Google Identity Services SDK -->
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
 
@@ -38,33 +22,35 @@
             <a href="about.html">About</a>
             <a href="certificate.html">Certificate</a>
             <a href="contact.html">Contact</a>
-                        <!-- Google Sign-In Button Container -->
-
-
         </nav>
-                <div id="g_id_onload"
-     data-client_id="901088483523-vhem1646erdia3e9ebn8lt6vo3qm5knp.apps.googleusercontent.com"
-     data-context="signin"
-     data-ux_mode="popup"
-     data-callback="handleCredentialResponse"
-     data-auto_prompt="false">
-</div>
 
-<div class="g_id_signin"
-     data-type="standard"
-     data-shape="rectangular"
-     data-theme="outline"
-     data-text="signin_with"
-     data-size="medium"
-     data-logo_alignment="left">
-</div>
+        <!-- Google Auth Container -->
+        <div id="auth-container">
+            <!-- IMPORTANT: Replace YOUR_GOOGLE_CLIENT_ID with your actual Google Cloud Client ID -->
+            <div id="g_id_onload"
+                 data-client_id="YOUR_GOOGLE_CLIENT_ID.apps.googleusercontent.com"
+                 data-context="signin"
+                 data-ux_mode="popup"
+                 data-callback="handleCredentialResponse"
+                 data-auto_prompt="false">
+            </div>
 
-<!-- User Profile Info Display (Shown after login) -->
-<div id="user-info" style="display: none; align-items: center; gap: 10px;">
-    <img id="user-avatar" src="" alt="Avatar" style="width: 32px; height: 32px; border-radius: 50%;">
-    <span id="user-name"></span>
-    <button onclick="logoutGoogle()" class="btn" style="padding: 4px 10px; font-size: 0.8rem;">Logout</button>
-</div>
+            <div class="g_id_signin"
+                 data-type="standard"
+                 data-shape="rectangular"
+                 data-theme="outline"
+                 data-text="signin_with"
+                 data-size="medium"
+                 data-logo_alignment="left">
+            </div>
+
+            <!-- User Profile Info Display (Shown after login) -->
+            <div id="user-info" style="display: none;">
+                <img id="user-avatar" src="" alt="Avatar">
+                <span id="user-name"></span>
+                <button onclick="logoutGoogle()" class="logout-btn">Logout</button>
+            </div>
+        </div>
     </header>
 
     <div class="profile-container">
@@ -81,21 +67,18 @@
     <section id="projects" class="projects-section">
         <h2>Featured Work</h2>
         <div class="grid">
-           
             <div class="card">
                 <h3>Resume</h3>
                 <p>Check out my Resume.</p>
                 <a href="Rafiq Resume.pdf" download="Mohamed_Rafiq_Resume.pdf" class="btn">Download Resume</a>
             </div>
 
-            <!-- Content Calendar Project Card -->
             <div class="card">
                 <h3>Sustainable Travel Content Calendar</h3>
                 <p>1-Week Sustainable Travel Campaign Strategy for Chennai & ECR coastal region, featuring visual concepts, copy hooks, and execution checklists.</p>
                 <a href="ilovepdf_merged.pdf" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
             </div>
 
-            <!-- Excel Mini Project Card -->
             <div class="card">
                 <h3>Excel Mini Project</h3>
                 <p>Student Skill Course Enrollment dashboard and data tracking system.</p>
@@ -113,7 +96,6 @@
                 <p>Check out my Internship Report</p>
                 <a href="https://raw.githubusercontent.com/mohamedrafiqm3-max/Rafiq-s-Portfolio-/main/Lotus%20company%20internship%20report.pdf" download="Lotus_Company_Internship_Report.pdf" class="btn">Download Report</a>
             </div>
-             
         </div>
     </section>
 
@@ -132,13 +114,12 @@
                 Hi! 👋 I'm Mohamed Rafiq's Virtual Assistant. How can I help you today?
             </div>
             <div class="chat-chips" id="chatChips">
-    <button class="chip" onclick="handleChipClick('skills')">💻 Skills & Tools</button>
-    <button class="chip" onclick="handleChipClick('projects')">📁 Projects</button>
-    <button class="chip" onclick="handleChipClick('certificates')">📜 Certificates</button>
-    <button class="chip" onclick="handleChipClick('contact')">📬 Contact Info</button>
-    <button class="chip" onclick="handleChipClick('resume')">📄 Resume</button>
-</div>
-
+                <button class="chip" onclick="handleChipClick('skills')">💻 Skills & Tools</button>
+                <button class="chip" onclick="handleChipClick('projects')">📁 Projects</button>
+                <button class="chip" onclick="handleChipClick('certificates')">📜 Certificates</button>
+                <button class="chip" onclick="handleChipClick('contact')">📬 Contact Info</button>
+                <button class="chip" onclick="handleChipClick('resume')">📄 Resume</button>
+            </div>
         </div>
 
         <form class="chat-input-area" id="chatForm">
@@ -159,3 +140,4 @@
 
 </body>
 </html>
+            
