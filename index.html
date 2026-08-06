@@ -13,44 +13,31 @@
     <script src="https://accounts.google.com/gsi/client" async defer></script>
 </head>
 <body>
+<!-- Header Navigation -->
+<header>
+    <div class="logo">My Portfolio</div>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="certificate.html">Certificate</a>
+        <a href="contact.html">Contact</a>
+    </nav>
 
-    <!-- Header Navigation -->
-    <header>
-        <div class="logo">My Portfolio</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="certificate.html">Certificate</a>
-            <a href="contact.html">Contact</a>
-        </nav>
+    <!-- Google Auth Container -->
+    <div id="auth-container">
+        <!-- Explicit target container for JS rendering -->
+        <div id="google-btn-container"></div>
 
-        <!-- Google Auth Container -->
-        <div id="auth-container">
-            <div id="g_id_onload"
-                 data-client_id="901088483523-vhem1646erdia3e9ebn8lt6vo3qm5knp.apps.googleusercontent.com"
-                 data-context="signin"
-                 data-ux_mode="popup"
-                 data-callback="handleCredentialResponse"
-                 data-auto_prompt="false">
-            </div>
-
-            <div class="g_id_signin"
-                 data-type="standard"
-                 data-shape="rectangular"
-                 data-theme="outline"
-                 data-text="signin_with"
-                 data-size="medium"
-                 data-logo_alignment="left">
-            </div>
-
-            <!-- User Profile Info Display (Shown after login) -->
-            <div id="user-info" style="display: none;">
-                <img id="user-avatar" src="" alt="Avatar">
-                <span id="user-name"></span>
-                <button onclick="logoutGoogle()" class="logout-btn">Logout</button>
-            </div>
+        <!-- User Profile Info Display (Shown after login) -->
+        <div id="user-info" style="display: none;">
+            <img id="user-avatar" src="" alt="Avatar">
+            <span id="user-name"></span>
+            <button onclick="logoutGoogle()" class="logout-btn">Logout</button>
         </div>
-    </header>
+    </div>
+</header>
+
+    
 
     <div class="profile-container">
         <img src="13.JPG" alt="Mohamed Rafiq.M Profile Photo" class="profile-pic">
