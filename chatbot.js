@@ -39,7 +39,7 @@ function handleChipClick(topic) {
     let userText = "";
     if (topic === "skills") userText = "What are your skills?";
     else if (topic === "projects") userText = "Tell me about your projects.";
-        else if (topic === "certificates");
+    else if (topic === "certificates") userText = "What certificates do you have?";
     else if (topic === "contact") userText = "How can I contact you?";
     else if (topic === "resume") userText = "Where can I get your resume?";
 
