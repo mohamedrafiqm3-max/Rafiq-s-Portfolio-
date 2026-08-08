@@ -175,6 +175,158 @@
                 padding: 30px;
             }
         }
+        /* Chatbot Styles */
+.chat-toggle-btn {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+    cursor: pointer;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.chat-toggle-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.08);
+}
+
+.chat-window {
+    position: fixed;
+    bottom: 95px;
+    right: 25px;
+    width: 350px;
+    max-width: 90vw;
+    height: 480px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    border: 1px solid #e2e8f0;
+}
+
+.chat-window.hidden {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px) scale(0.95);
+    pointer-events: none;
+}
+
+.chat-header {
+    background: linear-gradient(135deg, #007bff, #3182ce);
+    color: #ffffff;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-close-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.2rem;
+    cursor: pointer;
+}
+
+.chat-body {
+    flex: 1;
+    padding: 15px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: #f8f9fa;
+}
+
+.chat-message {
+    max-width: 80%;
+    padding: 10px 14px;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    line-height: 1.4;
+}
+
+.chat-message.bot {
+    background-color: #e9ecef;
+    color: #222;
+    align-self: flex-start;
+    border-bottom-left-radius: 2px;
+}
+
+.chat-message.user {
+    background-color: #007bff;
+    color: #ffffff;
+    align-self: flex-end;
+    border-bottom-right-radius: 2px;
+}
+
+.chat-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 5px;
+}
+
+.chip {
+    background-color: #ffffff;
+    border: 1px solid #007bff;
+color: #007bff;
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.chip:hover {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 10px;
+    background-color: #ffffff;
+    border-top: 1px solid #e2e8f0;
+}
+
+.chat-input-area input {
+    flex: 1;
+    border: 1px solid #cbd5e0;
+    padding: 10px 12px;
+    border-radius: 6px;
+    outline: none;
+    font-size: 0.9rem;
+}
+
+.chat-input-area button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+
+
     </style>
 </head>
 <body>
@@ -235,6 +387,37 @@
         </div>
 
     </div>
+    <!-- Chatbot Floating Toggle Button -->
+    <button class="chat-toggle-btn" id="chatToggleBtn" aria-label="Open Chat">💬</button>
+
+    <!-- Chatbot Window -->
+    <div class="chat-window hidden" id="chatWindow">
+        <div class="chat-header">
+            <h4>Ask Rafiq's Assistant 🤖</h4>
+            <button class="chat-close-btn" id="chatCloseBtn">&times;</button>
+        </div>
+        
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                Hi! 👋 I'm Mohamed Rafiq's Virtual Assistant. How can I help you today?
+            </div>
+            <div class="chat-chips" id="chatChips">
+                <button class="chip" onclick="handleChipClick('skills')">💻 Skills & Tools</button>
+                <button class="chip" onclick="handleChipClick('projects')">📁 Projects</button>
+                <button class="chip" onclick="handleChipClick('certificates')">📜 Certificates</button>
+                <button class="chip" onclick="handleChipClick('contact')">📬 Contact Info</button>
+                <button class="chip" onclick="handleChipClick('resume')">📄 Resume</button>
+            </div>
+        </div>
+
+        <form class="chat-input-area" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Type a question..." autocomplete="off">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+    <!-- Script Import -->
+    <script src="chatbot.js"></script>
+
 
     <a href="index.html" class="back-btn">← Back to Homepage</a>
 
