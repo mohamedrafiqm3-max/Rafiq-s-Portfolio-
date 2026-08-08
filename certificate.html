@@ -1,4 +1,4 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -72,13 +72,11 @@
                 filter: drop-shadow(0 0 0px rgba(0,0,0,0));
             }
             50% {
-                /* Color shift mid-way through zoom */
                 filter: drop-shadow(0 10px 20px rgba(49, 130, 206, 0.3));
             }
             100% {
                 opacity: 1;
                 transform: scale(1);
-                /* Dynamic soft outer glow */
                 filter: drop-shadow(0 8px 16px rgba(43, 108, 176, 0.15));
             }
         }
@@ -96,17 +94,20 @@
         }
 
         /* Different colored border highlights for each certificate on hover */
-        .mySlides:nth-of-type(1) .certificate-img:hover { border-color: #e53e3e; transform: scale(1.02); } /* Red accent */
-        .mySlides:nth-of-type(2) .certificate-img:hover { border-color: #319795; transform: scale(1.02); } /* Teal accent */
-        .mySlides:nth-of-type(3) .certificate-img:hover { border-color: #dd6b20; transform: scale(1.02); } /* Orange accent */
-        .mySlides:nth-of-type(4) .certificate-img:hover { border-color: #805ad5; transform: scale(1.02); } /* Purple accent */
-        .mySlides:nth-of-type(5) .certificate-img:hover { border-color: #3182ce; transform: scale(1.02); } /* Blue accent */
-        .mySlides:nth-of-type(6) .certificate-img:hover { border-color: #38a169; transform: scale(1.02); } /* Green accent */
-        .mySlides:nth-of-type(7) .certificate-img:hover { border-color: #b83280; transform: scale(1.02); } /* Pink/Magenta accent */
-        .mySlides:nth-of-type(8) .certificate-img:hover { border-color: #0056b3; transform: scale(1.02); } /* HP Deep Blue accent */
-        .mySlides:nth-of-type(9) .certificate-img:hover { border-color: #00a8e8; transform: scale(1.02); } /* HP Cyan accent */
-        .mySlides:nth-of-type(10) .certificate-img:hover { border-color: #0d6efd; transform: scale(1.02); } /* HP Royal Blue accent */
-        .mySlides:nth-of-type(11) .certificate-img:hover { border-color: #00b4d8; transform: scale(1.02); } /* Cisco Cyan accent */
+        .mySlides:nth-of-type(1) .certificate-img:hover { border-color: #e53e3e; transform: scale(1.02); }
+        .mySlides:nth-of-type(2) .certificate-img:hover { border-color: #319795; transform: scale(1.02); }
+        .mySlides:nth-of-type(3) .certificate-img:hover { border-color: #dd6b20; transform: scale(1.02); }
+        .mySlides:nth-of-type(4) .certificate-img:hover { border-color: #805ad5; transform: scale(1.02); }
+        .mySlides:nth-of-type(5) .certificate-img:hover { border-color: #3182ce; transform: scale(1.02); }
+        .mySlides:nth-of-type(6) .certificate-img:hover { border-color: #38a169; transform: scale(1.02); }
+        .mySlides:nth-of-type(7) .certificate-img:hover { border-color: #b83280; transform: scale(1.02); }
+        .mySlides:nth-of-type(8) .certificate-img:hover { border-color: #0056b3; transform: scale(1.02); }
+        .mySlides:nth-of-type(9) .certificate-img:hover { border-color: #00a8e8; transform: scale(1.02); }
+        .mySlides:nth-of-type(10) .certificate-img:hover { border-color: #0d6efd; transform: scale(1.02); }
+        .mySlides:nth-of-type(11) .certificate-img:hover { border-color: #00b4d8; transform: scale(1.02); }
+        .mySlides:nth-of-type(12) .certificate-img:hover { border-color: #00c4cc; transform: scale(1.02); } /* Canva Teal */
+        .mySlides:nth-of-type(13) .certificate-img:hover { border-color: #ff4f79; transform: scale(1.02); } /* Canva Coral/Pink */
+        .mySlides:nth-of-type(14) .certificate-img:hover { border-color: #7d2ae8; transform: scale(1.02); } /* Canva Purple */
 
         /* Certificate Details Text */
         .cert-title {
@@ -140,31 +141,27 @@
             text-decoration: none;
         }
 
-        .next {
-            right: 20px;
-            border-radius: 3px 0 0 3px;
-        }
-
-        .prev {
-            left: 20px;
-        }
-
+        .next { right: 20px; border-radius: 3px 0 0 3px; }
+        .prev { left: 20px; }
         .prev:hover, .next:hover {
             background-color: rgba(49, 130, 206, 0.1);
             color: #1a365d;
         }
 
-        /* Dot Indicators */
+        /* Dot Indicators - Grid Layout for Rows of 6 */
         .dot-container {
-            text-align: center;
-            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            max-width: 180px; /* Forces exactly 6 dots per row */
+            margin: 15px auto 0 auto;
+            gap: 8px 12px;
         }
 
         .dot {
             cursor: pointer;
             height: 12px;
             width: 12px;
-            margin: 0 4px;
             background-color: #cbd5e0;
             border-radius: 50%;
             display: inline-block;
@@ -183,6 +180,9 @@
         .dot:nth-of-type(9).active { background-color: #00a8e8; transform: scale(1.3); }
         .dot:nth-of-type(10).active { background-color: #0d6efd; transform: scale(1.3); }
         .dot:nth-of-type(11).active { background-color: #00b4d8; transform: scale(1.3); }
+        .dot:nth-of-type(12).active { background-color: #00c4cc; transform: scale(1.3); }
+        .dot:nth-of-type(13).active { background-color: #ff4f79; transform: scale(1.3); }
+        .dot:nth-of-type(14).active { background-color: #7d2ae8; transform: scale(1.3); }
 
         /* Home Navigation Button */
         .back-btn {
@@ -197,157 +197,156 @@
         .back-btn:hover {
             text-decoration: underline;
         }
-      /* Chatbot Styles */
-.chat-toggle-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
-    cursor: pointer;
-    font-size: 1.6rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 1000;
-}
 
-.chat-toggle-btn:hover {
-    background-color: #0056b3;
-    transform: scale(1.08);
-}
+        /* Chatbot Styles */
+        .chat-toggle-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 123, 255, 0.4);
+            cursor: pointer;
+            font-size: 1.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
 
-.chat-window {
-    position: fixed;
-    bottom: 95px;
-    right: 25px;
-    width: 350px;
-    max-width: 90vw;
-    height: 480px;
-    background-color: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-    z-index: 1000;
-    transition: all 0.3s ease;
-    border: 1px solid #e2e8f0;
-}
+        .chat-toggle-btn:hover {
+            background-color: #0056b3;
+            transform: scale(1.08);
+        }
 
-.chat-window.hidden {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px) scale(0.95);
-    pointer-events: none;
-}
+        .chat-window {
+            position: fixed;
+            bottom: 95px;
+            right: 25px;
+            width: 350px;
+            max-width: 90vw;
+            height: 480px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+        }
 
-.chat-header {
-    background: linear-gradient(135deg, #007bff, #3182ce);
-    color: #ffffff;
-    padding: 15px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        .chat-window.hidden {
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px) scale(0.95);
+            pointer-events: none;
+        }
 
-.chat-close-btn {
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 1.2rem;
-    cursor: pointer;
-}
+        .chat-header {
+            background: linear-gradient(135deg, #007bff, #3182ce);
+            color: #ffffff;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-.chat-body {
-    flex: 1;
-    padding: 15px;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    background-color: #f8f9fa;
-}
+        .chat-close-btn {
+            background: none;
+            border: none;
+            color: #ffffff;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
 
-.chat-message {
-    max-width: 80%;
-    padding: 10px 14px;
-    border-radius: 12px;
-    font-size: 0.9rem;
-    line-height: 1.4;
-}
+        .chat-body {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background-color: #f8f9fa;
+        }
 
-.chat-message.bot {
-    background-color: #e9ecef;
-    color: #222;
-    align-self: flex-start;
-    border-bottom-left-radius: 2px;
-}
+        .chat-message {
+            max-width: 80%;
+            padding: 10px 14px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
 
-.chat-message.user {
-    background-color: #007bff;
-    color: #ffffff;
-    align-self: flex-end;
-    border-bottom-right-radius: 2px;
-}
+        .chat-message.bot {
+            background-color: #e9ecef;
+            color: #222;
+            align-self: flex-start;
+            border-bottom-left-radius: 2px;
+        }
 
-.chat-chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
-    margin-top: 5px;
-}
+        .chat-message.user {
+            background-color: #007bff;
+            color: #ffffff;
+            align-self: flex-end;
+            border-bottom-right-radius: 2px;
+        }
 
-.chip {
-    background-color: #ffffff;
-    border: 1px solid #007bff;
-color: #007bff;
-    padding: 6px 12px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    transition: all 0.2s ease;
-}
+        .chat-chips {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 5px;
+        }
 
-.chip:hover {
-    background-color: #007bff;
-    color: #ffffff;
-}
+        .chip {
+            background-color: #ffffff;
+            border: 1px solid #007bff;
+            color: #007bff;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
 
-.chat-input-area {
-    display: flex;
-    padding: 10px;
-    background-color: #ffffff;
-    border-top: 1px solid #e2e8f0;
-}
+        .chip:hover {
+            background-color: #007bff;
+            color: #ffffff;
+        }
 
-.chat-input-area input {
-    flex: 1;
-    border: 1px solid #cbd5e0;
-    padding: 10px 12px;
-    border-radius: 6px;
-    outline: none;
-    font-size: 0.9rem;
-}
+        .chat-input-area {
+            display: flex;
+            padding: 10px;
+            background-color: #ffffff;
+            border-top: 1px solid #e2e8f0;
+        }
 
-.chat-input-area button {
-    background-color: #007bff;
-    color: #ffffff;
-    border: none;
-    padding: 10px 15px;
-    margin-left: 8px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: bold;
-}
+        .chat-input-area input {
+            flex: 1;
+            border: 1px solid #cbd5e0;
+            padding: 10px 12px;
+            border-radius: 6px;
+            outline: none;
+            font-size: 0.9rem;
+        }
 
-
+        .chat-input-area button {
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            padding: 10px 15px;
+            margin-left: 8px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -437,12 +436,33 @@ color: #007bff;
             <div class="cert-vendor">Cisco Networking Academy</div>
         </div>
 
+        <!-- Slide 12: AI skills for students -->
+        <div class="mySlides grow-color">
+            <img src="1001454879.jpg" class="certificate-img" alt="AI skills for students">
+            <div class="cert-title" style="color: #00c4cc;">AI skills for students</div>
+            <div class="cert-vendor">Canva Design School</div>
+        </div>
+
+        <!-- Slide 13: Meet Canva's Visual Suite -->
+        <div class="mySlides grow-color">
+            <img src="1001454881.jpg" class="certificate-img" alt="Meet Canva's Visual Suite">
+            <div class="cert-title" style="color: #ff4f79;">Meet Canva's Visual Suite</div>
+            <div class="cert-vendor">Canva Design School</div>
+        </div>
+
+        <!-- Slide 14: Canva Essentials -->
+        <div class="mySlides grow-color">
+            <img src="1001454883.jpg" class="certificate-img" alt="Canva Essentials">
+            <div class="cert-title" style="color: #7d2ae8;">Canva Essentials</div>
+            <div class="cert-vendor">Canva Design School</div>
+        </div>
+
         <!-- Navigation arrows -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
-    <!-- 11 Dot Indicators representing each slide -->
+    <!-- 14 Dot Indicators structured in grid wrapping (6 per row) -->
     <div class="dot-container">
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
@@ -455,8 +475,12 @@ color: #007bff;
         <span class="dot" onclick="currentSlide(9)"></span>
         <span class="dot" onclick="currentSlide(10)"></span>
         <span class="dot" onclick="currentSlide(11)"></span>
+        <span class="dot" onclick="currentSlide(12)"></span>
+        <span class="dot" onclick="currentSlide(13)"></span>
+        <span class="dot" onclick="currentSlide(14)"></span>
     </div>
-  <!-- Chatbot Floating Toggle Button -->
+
+    <!-- Chatbot Floating Toggle Button -->
     <button class="chat-toggle-btn" id="chatToggleBtn" aria-label="Open Chat">💬</button>
 
     <!-- Chatbot Window -->
@@ -539,123 +563,123 @@ color: #007bff;
                 showSlides(slideIndex);
             }, 3000); // Transitions automatically every 3 seconds
         }
-           document.addEventListener("DOMContentLoaded", () => {
-    const toggleBtn = document.getElementById("chatToggleBtn");
-    const closeBtn = document.getElementById("chatCloseBtn");
-    const chatWindow = document.getElementById("chatWindow");
-    const chatForm = document.getElementById("chatForm");
-    const chatInput = document.getElementById("chatInput");
 
-    // Toggle Chat Visibility
-    if (toggleBtn) {
-        toggleBtn.addEventListener("click", () => {
-            chatWindow.classList.toggle("hidden");
+        document.addEventListener("DOMContentLoaded", () => {
+            const toggleBtn = document.getElementById("chatToggleBtn");
+            const closeBtn = document.getElementById("chatCloseBtn");
+            const chatWindow = document.getElementById("chatWindow");
+            const chatForm = document.getElementById("chatForm");
+            const chatInput = document.getElementById("chatInput");
+
+            // Toggle Chat Visibility
+            if (toggleBtn) {
+                toggleBtn.addEventListener("click", () => {
+                    chatWindow.classList.toggle("hidden");
+                });
+            }
+
+            if (closeBtn) {
+                closeBtn.addEventListener("click", () => {
+                    chatWindow.classList.add("hidden");
+                });
+            }
+
+            // Form Submission
+            if (chatForm) {
+                chatForm.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                    const text = chatInput.value.trim();
+                    if (!text) return;
+
+                    appendMessage(text, "user");
+                    chatInput.value = "";
+
+                    setTimeout(() => {
+                        const response = getBotResponse(text.toLowerCase());
+                        appendMessage(response, "bot");
+                    }, 400);
+                });
+            }
+
+            // Restore Google login session on page load
+            const savedUser = localStorage.getItem("google_user");
+            if (savedUser) {
+                updateUserUI(JSON.parse(savedUser));
+            }
         });
-    }
 
-    if (closeBtn) {
-        closeBtn.addEventListener("click", () => {
-            chatWindow.classList.add("hidden");
-        });
-    }
+        // Quick Chip Action Click Handler
+        function handleChipClick(topic) {
+            const chipsContainer = document.getElementById("chatChips");
+            if (chipsContainer) chipsContainer.style.display = "none";
 
-    // Form Submission
-    if (chatForm) {
-        chatForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const text = chatInput.value.trim();
-            if (!text) return;
+            let userText = "";
+            if (topic === "skills") userText = "What are your skills?";
+            else if (topic === "projects") userText = "Tell me about your projects.";
+            else if (topic === "certificates") userText = "What certificates do you have?";
+            else if (topic === "contact") userText = "How can I contact you?";
+            else if (topic === "resume") userText = "Where can I get your resume?";
 
-            appendMessage(text, "user");
-            chatInput.value = "";
+            appendMessage(userText, "user");
 
             setTimeout(() => {
-                const response = getBotResponse(text.toLowerCase());
+                const response = getBotResponse(userText.toLowerCase());
                 appendMessage(response, "bot");
             }, 400);
-        });
-    }
+        }
 
-    // Restore Google login session on page load
-    const savedUser = localStorage.getItem("google_user");
-    if (savedUser) {
-        updateUserUI(JSON.parse(savedUser));
-    }
-});
+        // Append message to chat body
+        function appendMessage(text, sender) {
+            const chatBody = document.getElementById("chatBody");
+            if (!chatBody) return;
+            
+            const msgDiv = document.createElement("div");
+            msgDiv.classList.add("chat-message", sender);
+            msgDiv.innerHTML = text;
+            chatBody.appendChild(msgDiv);
+            chatBody.scrollTop = chatBody.scrollHeight;
+        }
 
-// Quick Chip Action Click Handler
-function handleChipClick(topic) {
-    const chipsContainer = document.getElementById("chatChips");
-    if (chipsContainer) chipsContainer.style.display = "none";
-
-    let userText = "";
-    if (topic === "skills") userText = "What are your skills?";
-    else if (topic === "projects") userText = "Tell me about your projects.";
-    else if (topic === "certificates") userText = "What certificates do you have?";
-    else if (topic === "contact") userText = "How can I contact you?";
-    else if (topic === "resume") userText = "Where can I get your resume?";
-
-    appendMessage(userText, "user");
-
-    setTimeout(() => {
-        const response = getBotResponse(userText.toLowerCase());
-        appendMessage(response, "bot");
-    }, 400);
-}
-
-// Append message to chat body
-function appendMessage(text, sender) {
-    const chatBody = document.getElementById("chatBody");
-    if (!chatBody) return;
-    
-    const msgDiv = document.createElement("div");
-    msgDiv.classList.add("chat-message", sender);
-    msgDiv.innerHTML = text;
-    chatBody.appendChild(msgDiv);
-    chatBody.scrollTop = chatBody.scrollHeight;
-}
-
-// Knowledge Base & Keyword Matching
-function getBotResponse(input) {
-    if (input.includes("certif") || input.includes("course") || input.includes("cisco") || input.includes("ibm") || input.includes("hp") || input.includes("p&g") || input.includes("safalta")) {
-        return "Mohamed holds several professional certifications:<br>" +
-               "• <b>HP LIFE:</b> Data Science & Analytics Certificate<br>" +
-               "• <b>Cisco Networking Academy:</b> Data Analytics Essentials<br>" +
-               "• <b>IBM SkillsBuild:</b> AI Fundamentals<br>" +
-               "• <b>P&G Safalta Program:</b> Digital Participation Certificate<br><br>" +
-               "🔗 You can view all certificate details on the <a href='certificate.html' style='color:#007bff;font-weight:bold;'>Certificates Page</a>!";
-    } else if (input.includes("who") || input.includes("about") || input.includes("background") || input.includes("degree") || input.includes("college") || input.includes("education")) {
-        return "<b>Mohamed Rafiq.M</b> is a 3rd-year <b>B.Com (Computer Applications)</b> student at Thiruthangal Nadar College (Madras University). He bridges business management, data analytics, and modern web engineering.";
-    } else if (input.includes("skill") || input.includes("tool") || input.includes("technol") || input.includes("programming")) {
-        return "Mohamed's technical toolkit includes:<br>" +
-               "• <b>Data Analytics & BI:</b> Power BI, SPSS Statistics, Advanced Excel, Python<br>" +
-               "• <b>Web Development:</b> HTML5, CSS3, MySQL, GitHub<br>" +
-               "• <b>Core Business:</b> Corporate Accounting, Tally Prime, Business Law<br>" +
-               "• <b>AI & Multimedia:</b> Prompt Engineering (ChatGPT, Gemini, Meta AI) & Video Editing";
-    } else if (input.includes("project") || input.includes("work") || input.includes("portfolio")) {
-        return "Here are Mohamed's featured projects:<br>" +
-               "1. <b>Sustainable Travel Content Calendar:</b> 1-Week campaign strategy for Chennai & ECR coast.<br>" +
-               "2. <b>Excel Mini Project:</b> Student Skill Course Enrollment tracking dashboard.<br>" +
-               "3. <b>Personal Web Portfolio:</b> Custom HTML/CSS/JS deployed on GitHub Pages.<br>" +
-               "4. <b>R Tech Phoenix Channel:</b> YouTube content pipeline & analytics management.";
-    } else if (input.includes("internship") || input.includes("lotus") || input.includes("shipping") || input.includes("experience")) {
-        return "Mohamed completed a 15-day <b>Data Analysis Internship in Logistics & Operations</b> at <b>Lotus Shipping Company</b>. You can download his full <a href='https://raw.githubusercontent.com/mohamedrafiqm3-max/Rafiq-s-Portfolio-/main/Lotus%20company%20internship%20report.pdf' target='_blank'>Internship Report Here</a>.";
-    } else if (input.includes("contact") || input.includes("email") || input.includes("reach") || input.includes("linkedin") || input.includes("phone")) {
-        return "You can get in touch with Mohamed via:<br>" +
-               "📧 Email: <a href='mailto:mohamedrafiqmt9@gmail.com'>mohamedrafiqmt9@gmail.com</a><br>" +
-               "💼 LinkedIn: <a href='https://www.linkedin.com/in/mohamed-rafiq-m-221591351' target='_blank'>LinkedIn Profile</a><br>" +
-               "📍 Location: Vyasarpadi, Chennai - 600 039";
-    } else if (input.includes("resume") || input.includes("cv") || input.includes("download")) {
-        return "📄 You can download his official resume <a href='Rafiq Resume.pdf' download='Mohamed_Rafiq_Resume.pdf' style='color:#007bff;font-weight:bold;'>Right Here</a>.";
-    } else if (input.includes("hi") || input.includes("hello") || input.includes("hey")) {
-        return "Hello! 👋 Feel free to ask me about Mohamed's skills, projects, certificates, internship at Lotus Shipping Company, or contact details!";
-    } else {
-        return "I'm not sure about that specific query, but you can reach Mohamed directly via email at <b>mohamedrafiqmt9@gmail.com</b> or check out his certificates on the main menu!";
-    }
-}
-
+        // Knowledge Base & Keyword Matching
+        function getBotResponse(input) {
+            if (input.includes("certif") || input.includes("course") || input.includes("cisco") || input.includes("ibm") || input.includes("hp") || input.includes("p&g") || input.includes("safalta") || input.includes("canva")) {
+                return "Mohamed holds several professional certifications:<br>" +
+                       "• <b>Canva Design School:</b> AI Skills, Visual Suite & Essentials<br>" +
+                       "• <b>HP LIFE:</b> Data Science & Analytics Certificate<br>" +
+                       "• <b>Cisco Networking Academy:</b> Data Analytics Essentials<br>" +
+                       "• <b>IBM SkillsBuild:</b> AI Fundamentals<br>" +
+                       "• <b>P&G Safalta Program:</b> Digital Participation Certificate<br><br>" +
+                       "🔗 You can view all certificate details on the <a href='certificate.html' style='color:#007bff;font-weight:bold;'>Certificates Page</a>!";
+            } else if (input.includes("who") || input.includes("about") || input.includes("background") || input.includes("degree") || input.includes("college") || input.includes("education")) {
+                return "<b>Mohamed Rafiq.M</b> is a 3rd-year <b>B.Com (Computer Applications)</b> student at Thiruthangal Nadar College (Madras University). He bridges business management, data analytics, and modern web engineering.";
+            } else if (input.includes("skill") || input.includes("tool") || input.includes("technol") || input.includes("programming")) {
+                return "Mohamed's technical toolkit includes:<br>" +
+                       "• <b>Data Analytics & BI:</b> Power BI, SPSS Statistics, Advanced Excel, Python<br>" +
+                       "• <b>Web Development:</b> HTML5, CSS3, MySQL, GitHub<br>" +
+                       "• <b>Core Business:</b> Corporate Accounting, Tally Prime, Business Law<br>" +
+                       "• <b>AI & Multimedia:</b> Prompt Engineering (ChatGPT, Gemini, Meta AI) & Video Editing";
+            } else if (input.includes("project") || input.includes("work") || input.includes("portfolio")) {
+                return "Here are Mohamed's featured projects:<br>" +
+                       "1. <b>Sustainable Travel Content Calendar:</b> 1-Week campaign strategy for Chennai & ECR coast.<br>" +
+                       "2. <b>Excel Mini Project:</b> Student Skill Course Enrollment tracking dashboard.<br>" +
+                       "3. <b>Personal Web Portfolio:</b> Custom HTML/CSS/JS deployed on GitHub Pages.<br>" +
+                       "4. <b>R Tech Phoenix Channel:</b> YouTube content pipeline & analytics management.";
+            } else if (input.includes("internship") || input.includes("lotus") || input.includes("shipping") || input.includes("experience")) {
+                return "Mohamed completed a 15-day <b>Data Analysis Internship in Logistics & Operations</b> at <b>Lotus Shipping Company</b>. You can download his full <a href='https://raw.githubusercontent.com/mohamedrafiqm3-max/Rafiq-s-Portfolio-/main/Lotus%20company%20internship%20report.pdf' target='_blank'>Internship Report Here</a>.";
+            } else if (input.includes("contact") || input.includes("email") || input.includes("reach") || input.includes("linkedin") || input.includes("phone")) {
+                return "You can get in touch with Mohamed via:<br>" +
+                       "📧 Email: <a href='mailto:mohamedrafiqmt9@gmail.com'>mohamedrafiqmt9@gmail.com</a><br>" +
+                       "💼 LinkedIn: <a href='https://www.linkedin.com/in/mohamed-rafiq-m-221591351' target='_blank'>LinkedIn Profile</a><br>" +
+                       "📍 Location: Vyasarpadi, Chennai - 600 039";
+            } else if (input.includes("resume") || input.includes("cv") || input.includes("download")) {
+                return "📄 You can download his official resume <a href='Rafiq Resume.pdf' download='Mohamed_Rafiq_Resume.pdf' style='color:#007bff;font-weight:bold;'>Right Here</a>.";
+            } else if (input.includes("hi") || input.includes("hello") || input.includes("hey")) {
+                return "Hello! 👋 Feel free to ask me about Mohamed's skills, projects, certificates, internship at Lotus Shipping Company, or contact details!";
+            } else {
+                return "I'm not sure about that specific query, but you can reach Mohamed directly via email at <b>mohamedrafiqmt9@gmail.com</b> or check out his certificates on the main menu!";
+            }
+        }
     </script>
 
 </body>
 </html>
-                      
