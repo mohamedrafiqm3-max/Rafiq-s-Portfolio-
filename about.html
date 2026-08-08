@@ -62,12 +62,43 @@
                     <div class="skill-tags">Prompt Engineering (Google Gemini, OpenAI ChatGPT, Meta AI), Workflow Optimization</div>
                 </div>
             </div>
+            <!-- Chatbot Floating Toggle Button -->
+    <button class="chat-toggle-btn" id="chatToggleBtn" aria-label="Open Chat">💬</button>
+
+    <!-- Chatbot Window -->
+    <div class="chat-window hidden" id="chatWindow">
+        <div class="chat-header">
+            <h4>Ask Rafiq's Assistant 🤖</h4>
+            <button class="chat-close-btn" id="chatCloseBtn">&times;</button>
+        </div>
+        
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                Hi! 👋 I'm Mohamed Rafiq's Virtual Assistant. How can I help you today?
+            </div>
+            <div class="chat-chips" id="chatChips">
+                <button class="chip" onclick="handleChipClick('skills')">💻 Skills & Tools</button>
+                <button class="chip" onclick="handleChipClick('projects')">📁 Projects</button>
+                <button class="chip" onclick="handleChipClick('certificates')">📜 Certificates</button>
+                <button class="chip" onclick="handleChipClick('contact')">📬 Contact Info</button>
+                <button class="chip" onclick="handleChipClick('resume')">📄 Resume</button>
+            </div>
+        </div>
+
+        <form class="chat-input-area" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Type a question..." autocomplete="off">
+            <button type="submit">Send</button>
+        </form>
+    </div>
         </section>
 
         <footer>
             © 2026 Mohamed Rafiq.M. Built with semantic HTML & Custom CSS.
         </footer>
     </div>
+    <!-- Script Import -->
+    <script src="chatbot.js"></script>
+
 
 </body>
 </html>
