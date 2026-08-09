@@ -347,6 +347,12 @@
             cursor: pointer;
             font-weight: bold;
         }
+        /* Add hover border color for slide 15 */
+.mySlides:nth-of-type(15) .certificate-img:hover { border-color: #ff9900; transform: scale(1.02); }
+
+/* Add active dot color for slide 15 */
+.dot:nth-of-type(15).active { background-color: #ff9900; transform: scale(1.3); }
+
     </style>
 </head>
 <body>
@@ -456,13 +462,20 @@
             <div class="cert-title" style="color: #7d2ae8;">Canva Essentials</div>
             <div class="cert-vendor">Canva Design School</div>
         </div>
+                <!-- Slide 15: Introduction to Claude Platform on AWS -->
+        <div class="mySlides grow-color">
+            <img src="1001466044.jpg" class="certificate-img" alt="Introduction to Claude Platform on AWS">
+            <div class="cert-title" style="color: #ff9900;">Introduction to Claude Platform on AWS</div>
+            <div class="cert-vendor">AWS Training & Certification</div>
+        </div>
+
 
         <!-- Navigation arrows -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
-    <!-- 14 Dot Indicators structured in grid wrapping (6 per row) -->
+    <!-- 15 Dot Indicators structured in grid wrapping (6 per row) -->
     <div class="dot-container">
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
@@ -477,7 +490,8 @@
         <span class="dot" onclick="currentSlide(11)"></span>
         <span class="dot" onclick="currentSlide(12)"></span>
         <span class="dot" onclick="currentSlide(13)"></span>
-        <span class="dot" onclick="currentSlide(14)"></span>
+         <span class="dot" onclick="currentSlide(14)"></span>
+        <span class="dot" onclick="currentSlide(15)"></span>
     </div>
 
     <!-- Chatbot Floating Toggle Button -->
