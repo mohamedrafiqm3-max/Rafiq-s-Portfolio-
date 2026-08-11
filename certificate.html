@@ -197,6 +197,12 @@
         .back-btn:hover {
             text-decoration: underline;
         }
+        /* Add hover border color for slide 16 */
+.mySlides:nth-of-type(16) .certificate-img:hover { border-color: #00d285; transform: scale(1.02); }
+
+/* Add active dot color for slide 16 */
+.dot:nth-of-type(16).active { background-color: #00d285; transform: scale(1.3); }
+
 
         /* Chatbot Styles */
         .chat-toggle-btn {
@@ -468,6 +474,13 @@
             <div class="cert-title" style="color: #ff9900;">Introduction to Claude Platform on AWS</div>
             <div class="cert-vendor">AWS Training & Certification</div>
         </div>
+                <!-- Slide 16: Marketing with Canva -->
+        <div class="mySlides grow-color">
+            <img src="1001520464.jpg" class="certificate-img" alt="Marketing with Canva">
+            <div class="cert-title" style="color: #00d285;">Marketing with Canva</div>
+            <div class="cert-vendor">Canva Design School</div>
+        </div>
+
 
 
         <!-- Navigation arrows -->
@@ -492,6 +505,8 @@
         <span class="dot" onclick="currentSlide(13)"></span>
          <span class="dot" onclick="currentSlide(14)"></span>
         <span class="dot" onclick="currentSlide(15)"></span>
+                <span class="dot" onclick="currentSlide(16)"></span>
+
     </div>
 
     <!-- Chatbot Floating Toggle Button -->
