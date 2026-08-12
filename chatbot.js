@@ -76,14 +76,17 @@ function appendMessage(text, sender) {
 
 // Knowledge Base & Keyword Matching
 function getBotResponse(input) {
-    if (input.includes("certif") || input.includes("course") || input.includes("cisco") || input.includes("ibm") || input.includes("hp") || input.includes("p&g") || input.includes("safalta")) {
-        return "Mohamed holds several professional certifications:<br>" +
-               "• <b>HP LIFE:</b> Data Science & Analytics Certificate<br>" +
-               "• <b>Cisco Networking Academy:</b> Data Analytics Essentials<br>" +
-               "• <b>IBM SkillsBuild:</b> AI Fundamentals<br>" +
-               "• <b>P&G Safalta Program:</b> Digital Participation Certificate<br><br>" +
-               "🔗 You can view all certificate details on the <a href='certificate.html' style='color:#007bff;font-weight:bold;'>Certificates Page</a>!";
-    } else if (input.includes("who") || input.includes("about") || input.includes("background") || input.includes("degree") || input.includes("college") || input.includes("education")) {
+                 if (input.includes("certif") || input.includes("course") || input.includes("cisco") || input.includes("ibm") || input.includes("hp") || input.includes("p&g") || input.includes("safalta") || input.includes("canva")) {
+                return "Mohamed holds several professional certifications:<br>" +
+                       "• <b>Canva Design School:</b> Marketing with Canva, AI Skills, Visual Suite & Essentials<br>" +
+                       "• <b>AWS:</b> Introduction to Claude Platform on AWS<br>" +
+                       "• <b>HP LIFE:</b> Data Science & Analytics Certificate<br>" +
+                       "• <b>Cisco Networking Academy:</b> Data Analytics Essentials & Cybersecurity<br>" +
+                       "• <b>IBM SkillsBuild:</b> Getting Started with Generative AI<br><br>" +
+                       "🔗 You can view all certificate details on the <a href='certificate.html' style='color:#007bff;font-weight:bold;'>Certificates Page</a>!";
+            }
+
+     else if (input.includes("who") || input.includes("about") || input.includes("background") || input.includes("degree") || input.includes("college") || input.includes("education")) {
         return "<b>Mohamed Rafiq.M</b> is a 3rd-year <b>B.Com (Computer Applications)</b> student at Thiruthangal Nadar College (Madras University). He bridges business management, data analytics, and modern web engineering.";
     } else if (input.includes("skill") || input.includes("tool") || input.includes("technol") || input.includes("programming")) {
         return "Mohamed's technical toolkit includes:<br>" +
