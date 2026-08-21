@@ -108,6 +108,9 @@
         .mySlides:nth-of-type(12) .certificate-img:hover { border-color: #00c4cc; transform: scale(1.02); } /* Canva Teal */
         .mySlides:nth-of-type(13) .certificate-img:hover { border-color: #ff4f79; transform: scale(1.02); } /* Canva Coral/Pink */
         .mySlides:nth-of-type(14) .certificate-img:hover { border-color: #7d2ae8; transform: scale(1.02); } /* Canva Purple */
+        .mySlides:nth-of-type(15) .certificate-img:hover { border-color: #ff9900; transform: scale(1.02); }
+        .mySlides:nth-of-type(16) .certificate-img:hover { border-color: #00d285; transform: scale(1.02); }
+        .mySlides:nth-of-type(17) .certificate-img:hover { border-color: #e63946; transform: scale(1.02); }
 
         /* Certificate Details Text */
         .cert-title {
@@ -183,6 +186,9 @@
         .dot:nth-of-type(12).active { background-color: #00c4cc; transform: scale(1.3); }
         .dot:nth-of-type(13).active { background-color: #ff4f79; transform: scale(1.3); }
         .dot:nth-of-type(14).active { background-color: #7d2ae8; transform: scale(1.3); }
+        .dot:nth-of-type(15).active { background-color: #ff9900; transform: scale(1.3); }
+        .dot:nth-of-type(16).active { background-color: #00d285; transform: scale(1.3); }
+        .dot:nth-of-type(17).active { background-color: #e63946; transform: scale(1.3); }
 
         /* Home Navigation Button */
         .back-btn {
@@ -197,12 +203,6 @@
         .back-btn:hover {
             text-decoration: underline;
         }
-        /* Add hover border color for slide 16 */
-.mySlides:nth-of-type(16) .certificate-img:hover { border-color: #00d285; transform: scale(1.02); }
-
-/* Add active dot color for slide 16 */
-.dot:nth-of-type(16).active { background-color: #00d285; transform: scale(1.3); }
-
 
         /* Chatbot Styles */
         .chat-toggle-btn {
@@ -353,12 +353,6 @@
             cursor: pointer;
             font-weight: bold;
         }
-        /* Add hover border color for slide 15 */
-.mySlides:nth-of-type(15) .certificate-img:hover { border-color: #ff9900; transform: scale(1.02); }
-
-/* Add active dot color for slide 15 */
-.dot:nth-of-type(15).active { background-color: #ff9900; transform: scale(1.3); }
-
     </style>
 </head>
 <body>
@@ -468,27 +462,34 @@
             <div class="cert-title" style="color: #7d2ae8;">Canva Essentials</div>
             <div class="cert-vendor">Canva Design School</div>
         </div>
-                <!-- Slide 15: Introduction to Claude Platform on AWS -->
+
+        <!-- Slide 15: Introduction to Claude Platform on AWS -->
         <div class="mySlides grow-color">
             <img src="Aws.jpg" class="certificate-img" alt="Introduction to Claude Platform on AWS">
             <div class="cert-title" style="color: #ff9900;">Introduction to Claude Platform on AWS</div>
             <div class="cert-vendor">AWS Training & Certification</div>
         </div>
-                <!-- Slide 16: Marketing with Canva -->
+
+        <!-- Slide 16: Marketing with Canva -->
         <div class="mySlides grow-color">
             <img src="Canva market cert-title .jpg" class="certificate-img" alt="Marketing with Canva">
             <div class="cert-title" style="color: #00d285;">Marketing with Canva</div>
             <div class="cert-vendor">Canva Design School</div>
         </div>
 
-
+        <!-- Slide 17: Certificate 17 -->
+        <div class="mySlides grow-color">
+            <img src="1001595315.jpg" class="certificate-img" alt="Professional Certification">
+            <div class="cert-title" style="color: #e63946;">Professional Certification</div>
+            <div class="cert-vendor">Certification Provider</div>
+        </div>
 
         <!-- Navigation arrows -->
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
     </div>
 
-    <!-- 15 Dot Indicators structured in grid wrapping (6 per row) -->
+    <!-- 17 Dot Indicators structured in grid wrapping (6 per row) -->
     <div class="dot-container">
         <span class="dot" onclick="currentSlide(1)"></span>
         <span class="dot" onclick="currentSlide(2)"></span>
@@ -503,10 +504,10 @@
         <span class="dot" onclick="currentSlide(11)"></span>
         <span class="dot" onclick="currentSlide(12)"></span>
         <span class="dot" onclick="currentSlide(13)"></span>
-         <span class="dot" onclick="currentSlide(14)"></span>
+        <span class="dot" onclick="currentSlide(14)"></span>
         <span class="dot" onclick="currentSlide(15)"></span>
-                <span class="dot" onclick="currentSlide(16)"></span>
-
+        <span class="dot" onclick="currentSlide(16)"></span>
+        <span class="dot" onclick="currentSlide(17)"></span>
     </div>
 
     <!-- Chatbot Floating Toggle Button -->
@@ -671,7 +672,7 @@
 
         // Knowledge Base & Keyword Matching
         function getBotResponse(input) {
-                        if (input.includes("certif") || input.includes("course") || input.includes("cisco") || input.includes("ibm") || input.includes("hp") || input.includes("p&g") || input.includes("safalta") || input.includes("canva")) {
+            if (input.includes("certif") || input.includes("course") || input.includes("cisco") || input.includes("ibm") || input.includes("hp") || input.includes("p&g") || input.includes("safalta") || input.includes("canva")) {
                 return "Mohamed holds several professional certifications:<br>" +
                        "• <b>Canva Design School:</b> Marketing with Canva, AI Skills, Visual Suite & Essentials<br>" +
                        "• <b>AWS:</b> Introduction to Claude Platform on AWS<br>" +
@@ -679,8 +680,7 @@
                        "• <b>Cisco Networking Academy:</b> Data Analytics Essentials & Cybersecurity<br>" +
                        "• <b>IBM SkillsBuild:</b> Getting Started with Generative AI<br><br>" +
                        "🔗 You can view all certificate details on the <a href='certificate.html' style='color:#007bff;font-weight:bold;'>Certificates Page</a>!";
-            }
- else if (input.includes("who") || input.includes("about") || input.includes("background") || input.includes("degree") || input.includes("college") || input.includes("education")) {
+            } else if (input.includes("who") || input.includes("about") || input.includes("background") || input.includes("degree") || input.includes("college") || input.includes("education")) {
                 return "<b>Mohamed Rafiq.M</b> is a 3rd-year <b>B.Com (Computer Applications)</b> student at Thiruthangal Nadar College (Madras University). He bridges business management, data analytics, and modern web engineering.";
             } else if (input.includes("skill") || input.includes("tool") || input.includes("technol") || input.includes("programming")) {
                 return "Mohamed's technical toolkit includes:<br>" +
