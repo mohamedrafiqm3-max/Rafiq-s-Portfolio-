@@ -41,52 +41,6 @@ nav a:hover {
     color: #007bff;
 }
 
-/* Google Auth Container & Badges */
-#auth-container {
-    display: flex;
-    align-items: center;
-}
-
-.g_id_signin {
-    display: inline-block;
-    min-height: 40px;
-}
-
-#user-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-#user-avatar {
-    width: 35px;
-    height: 35px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 1px solid #cbd5e0;
-}
-
-#user-name {
-    font-weight: 600;
-    font-size: 0.9rem;
-    color: #333;
-}
-
-.logout-btn {
-    background-color: #e53e3e;
-    color: white;
-    border: none;
-    padding: 5px 12px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 0.8rem;
-    transition: background 0.2s;
-}
-
-.logout-btn:hover {
-    background-color: #c53030;
-}
-
 /* Profile Picture Container */
 .profile-container {
     text-align: center;
@@ -174,14 +128,14 @@ nav a:hover {
                 0 0 15px rgba(0, 123, 255, 0.15);
 }
 
-/* Project Image Container with Zoom Animation */
+/* Project Image Container with Proper Sizing & Zoom Animation */
 .card-img-wrapper {
     width: 100%;
     height: 180px;
     border-radius: 8px;
     overflow: hidden;
     margin-bottom: 15px;
-    background-color: #e9ecef;
+    background-color: #f1f5f9;
     position: relative;
 }
 
@@ -189,6 +143,8 @@ nav a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top center;
+    display: block;
     transition: transform 0.5s ease;
 }
 
