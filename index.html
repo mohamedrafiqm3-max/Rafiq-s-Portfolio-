@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>My Portfolio | Mohamed Rafiq.M</title>
 
     <!-- Favicon Tag -->
     <link rel="icon" type="image/png" href="1001440692-removebg-preview.png">
@@ -14,31 +14,35 @@
 </head>
 <body>
 <!-- Header Navigation -->
-<header>
+<header class="main-header">
     <div class="logo">Mohamed Rafiq.M</div>
     <nav>
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="certificate.html">Certificate</a>
         <a href="contact.html">Contact</a>
     </nav>
 </header>
 
-    <div class="profile-container">
-        <img src="13.JPG" alt="Mohamed Rafiq.M Profile Photo" class="profile-pic">
+    <!-- Profile Picture Section -->
+    <div class="profile-container animate-fade-in">
+        <div class="profile-ring">
+            <img src="13.JPG" alt="Mohamed Rafiq.M Profile Photo" class="profile-pic">
+        </div>
     </div>
 
     <!-- Hero Introduction Section -->
-    <section id="about" class="hero">
-        <h1>Hi, I'm Mohamed Rafiq.M [ B.Com (Computer Applications) ] Student</h1>
-        <p>"Hi, I'm Mohamed Rafiq.M. I bridge business management, data analytics, and web development to build smart, data-driven digital solutions and automated workflows."</p>
+    <section id="about" class="hero animate-up delay-1">
+        <h1 class="glow-text">Hi, I'm Mohamed Rafiq.M</h1>
+        <p class="subtitle">[ B.Com (Computer Applications) Student ]</p>
+        <p class="hero-desc">"I bridge business management, data analytics, and web development to build smart, data-driven digital solutions and automated workflows."</p>
     </section>
 
     <!-- Projects Grid Section -->
-    <section id="projects" class="projects-section">
-        <h2>Featured Work</h2>
+    <section id="projects" class="projects-section animate-up delay-2">
+        <h2 class="glow-title">Featured Work</h2>
         <div class="grid">
-            <div class="card">
+            <div class="card glowing-card">
                 <div class="card-img-wrapper">
                     <img src="Screenshot_20261031_140926_Chrome.jpg" alt="Resume Preview" class="card-img">
                 </div>
@@ -50,7 +54,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card glowing-card">
                 <div class="card-img-wrapper">
                     <img src="zentaxic.png" alt="Zentaxic Project Screenshot" class="card-img">
                 </div>
@@ -61,7 +65,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card glowing-card">
                 <div class="card-img-wrapper">
                     <img src="shipvertex.png" alt="ShipVertex Project Screenshot" class="card-img">
                 </div>
@@ -72,7 +76,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card glowing-card">
                 <div class="card-img-wrapper">
                     <img src="content.png" alt="Sustainable Travel Content Strategy Screenshot" class="card-img">
                 </div>
@@ -83,7 +87,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card glowing-card">
                 <div class="card-img-wrapper">
                     <img src="studentexcel.png" alt="Excel Enrollment Dashboard Screenshot" class="card-img">
                 </div>
@@ -94,7 +98,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card glowing-card">
                 <div class="card-img-wrapper">
                     <img src="youtube.png" alt="YouTube Channel Preview Screenshot" class="card-img">
                 </div>
@@ -105,7 +109,7 @@
                 </div>
             </div>
 
-            <div class="card">
+            <div class="card glowing-card">
                 <div class="card-img-wrapper">
                     <img src="logistics.png" alt="Internship Report Screenshot" class="card-img">
                 </div>
@@ -119,7 +123,7 @@
     </section>
 
     <!-- Chatbot Floating Toggle Button -->
-    <button class="chat-toggle-btn" id="chatToggleBtn" aria-label="Open Chat">💬</button>
+    <button class="chat-toggle-btn pulse-glow" id="chatToggleBtn" aria-label="Open Chat">💬</button>
 
     <!-- Chatbot Window -->
     <div class="chat-window hidden" id="chatWindow">
@@ -149,13 +153,12 @@
 
     <!-- Contact Footer -->
     <footer id="contact">
-        <h2>Let's Connect</h2>
-        <p>Email: mohamedrafiqmt9@gmail.com, mohamedrafiq3@gmail.com</p>
-        <p><a href="https://www.linkedin.com/in/mohamed-rafiq-m-221591351" target="_blank" rel="noopener noreferrer">Connect on LinkedIn</a></p>
+        <h2 class="glow-title-footer">Let's Connect</h2>
+        <p>Email: <a href="mailto:mohamedrafiqmt9@gmail.com">mohamedrafiqmt9@gmail.com</a> | <a href="mailto:mohamedrafiq3@gmail.com">mohamedrafiq3@gmail.com</a></p>
+        <p><a href="https://www.linkedin.com/in/mohamed-rafiq-m-221591351" target="_blank" rel="noopener noreferrer" class="footer-link">Connect on LinkedIn ↗</a></p>
     </footer>
 
     <!-- Script Import -->
     <script src="chatbot.js"></script>
-
 </body>
 </html>
