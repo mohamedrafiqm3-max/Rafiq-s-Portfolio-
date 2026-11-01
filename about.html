@@ -9,61 +9,68 @@
     <link rel="stylesheet" href="about.css">
 </head>
 <body>
-    <header>
+    <header class="main-header">
         <div class="logo">My Portfolio</div>
         <nav>
             <a href="index.html">Home</a>
-            <a href="about.html">About</a>
+            <a href="about.html" class="active">About</a>
             <a href="certificate.html">Certificate</a>
             <a href="contact.html">Contact</a>
         </nav>
     </header>
-    <div class="container">
-        <header>
-            <h1>Mohamed Rafiq.M</h1>
+
+    <div class="container animate-fade-in">
+        <header class="profile-header">
+            <h1 class="glow-text">Mohamed Rafiq.M</h1>
             <p class="subtitle">B.Com (Computer Applications) Student</p>
         </header>
 
-        <section id="about">
-            <h2>About Me</h2>
+        <section id="about" class="animate-up delay-1">
+            <h2 class="glow-title">About Me</h2>
             <p>
                 Hi! I am currently a 3rd-year undergraduate student specializing in <strong>Commerce and Computer Applications</strong>. 
-                ​​I am a business-minded tech professional specializing in bridging the gap between commerce and technology. With a solid foundation in B.Com (Computer Applications), my expertise spans Data & Business Intelligence using Advanced Excel, Power BI, and SPSS Statistics to translate raw numbers into actionable growth strategies. On the technical side, I build and deploy modern web solutions using HTML5, CSS3, MySQL, and GitHub. Additionally, I leverage modern AI Systems & Automation through prompt engineering (Google Gemini, OpenAI ChatGPT, Meta AI) to optimize workflows, alongside a strong foundation in Multimedia Content Strategy spanning digital video editing and data-driven YouTube analytics frameworks.
+                I am a business-minded tech professional specializing in bridging the gap between commerce and technology. With a solid foundation in B.Com (Computer Applications), my expertise spans Data & Business Intelligence using Advanced Excel, Power BI, and SPSS Statistics to translate raw numbers into actionable growth strategies. On the technical side, I build and deploy modern web solutions using HTML5, CSS3, MySQL, and GitHub. Additionally, I leverage modern AI Systems & Automation through prompt engineering (Google Gemini, OpenAI ChatGPT, Meta AI) to optimize workflows, alongside a strong foundation in Multimedia Content Strategy spanning digital video editing and data-driven YouTube analytics frameworks.
             </p>
         </section>
 
-        <section id="skills">
-            <h2>Technical Inventory & Core Knowledge</h2>
+        <section id="skills" class="animate-up delay-2">
+            <h2 class="glow-title">Technical Inventory & Core Knowledge</h2>
             
             <div class="skills-grid">
-                <!-- Added Commerce Knowledge Section -->
-                <div class="skill-category">
+                <div class="skill-category glowing-card">
                     <h3>Commerce & Core Business Principles</h3>
                     <div class="skill-tags">Principles of Management, Principles of Marketing, Company Law, Business Law, Banking Law, Auditing & Corporate Governance</div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category glowing-card">
                     <h3>Data & Business Intelligence</h3>
                     <div class="skill-tags">Advanced Microsoft Excel (Pivot Systems, Complex Query Logic), Power BI, SPSS Statistics</div>
                 </div>
                 
-                <div class="skill-category">
+                <div class="skill-category glowing-card">
                     <h3>Web & Systems Engineering</h3>
                     <div class="skill-tags">HTML5, CSS3, MySQL, ArgoUML Modeling (Class Diagram, UseCase Diagram, Sequence Diagram), GitHub Deployments</div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category glowing-card">
                     <h3>Multimedia Content Strategy</h3>
                     <div class="skill-tags">Digital Video Editing, Canva Asset Creation, YouTube Studio Analytics Frameworks</div>
                 </div>
 
-                <div class="skill-category">
+                <div class="skill-category glowing-card">
                     <h3>AI Systems & Automation</h3>
                     <div class="skill-tags">Prompt Engineering (Google Gemini, OpenAI ChatGPT, Meta AI), Workflow Optimization</div>
                 </div>
             </div>
-            <!-- Chatbot Floating Toggle Button -->
-    <button class="chat-toggle-btn" id="chatToggleBtn" aria-label="Open Chat">💬</button>
+        </section>
+
+        <footer>
+            © 2026 Mohamed Rafiq.M. Built with semantic HTML & Custom CSS.
+        </footer>
+    </div>
+
+    <!-- Chatbot Floating Toggle Button -->
+    <button class="chat-toggle-btn pulse-glow" id="chatToggleBtn" aria-label="Open Chat">💬</button>
 
     <!-- Chatbot Window -->
     <div class="chat-window hidden" id="chatWindow">
@@ -90,16 +97,8 @@
             <button type="submit">Send</button>
         </form>
     </div>
-        </section>
 
-        <footer>
-            © 2026 Mohamed Rafiq.M. Built with semantic HTML & Custom CSS.
-        </footer>
-    </div>
     <!-- Script Import -->
     <script src="chatbot.js"></script>
-
-
 </body>
 </html>
-
