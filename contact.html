@@ -12,6 +12,39 @@
             margin: 50px auto;
             padding: 0 5%;
         }
+        /* Stylish Back to Home Button Design */
+        .back-home-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: var(--text-primary);
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 0.92rem;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .back-home-btn span {
+            display: inline-block;
+            transition: transform 0.3s ease;
+            color: var(--primary-blue);
+            font-weight: 700;
+        }
+        .back-home-btn:hover {
+            border-color: var(--primary-blue);
+            background: linear-gradient(135deg, rgba(2, 132, 199, 0.05), rgba(8, 145, 178, 0.08));
+            box-shadow: 0 6px 20px var(--glow-color);
+            transform: translateY(-2px);
+        }
+        .back-home-btn:hover span {
+            transform: translateX(-5px);
+        }
+
         .contact-card {
             background: var(--card-bg);
             border-radius: 20px;
@@ -113,29 +146,12 @@
     </style>
 </head>
 <body>
-    <header class="main-header">
-        <div class="logo">My Portfolio</div>
-        
-        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
-            <span class="bar"></span>
-            <span class="bar"></span>
-            <span class="bar"></span>
-        </button>
-
-        <nav class="nav-links" id="navLinks">
-            <a href="index.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="certificate.html">Certificate</a>
-            <a href="contact.html" class="active">Contact</a>
-
-            <div class="nav-tools">
-                <button class="terminal-toggle-btn" onclick="toggleTerminal()" title="Toggle Developer Terminal Mode">&gt;_</button>
-                <span class="cmd-badge" onclick="toggleCommandPalette(true)">Ctrl + K</span>
-            </div>
-        </nav>
-    </header>
-
     <main class="contact-page-wrapper animate-fade-in">
+        <!-- Upgraded Styled Back to Home Button -->
+        <a href="index.html" class="back-home-btn">
+            <span>←</span> Back to Home Page
+        </a>
+
         <div class="contact-card">
             <h1 class="glow-text" style="font-size: 2rem; font-weight: 800;">Let's Build Something Together</h1>
             <p class="subtitle" style="margin-bottom: 0;">Feel free to drop a message or reach out via my professional channels.</p>
@@ -182,12 +198,6 @@
         </div>
     </main>
 
-    <footer>
-        <h2>Let's Connect</h2>
-        <p>Email: <a href="mailto:mohamedrafiqmt9@gmail.com">mohamedrafiqmt9@gmail.com</a></p>
-        <p><a href="https://www.linkedin.com/in/mohamed-rafiq-m-221591351" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a></p>
-    </footer>
-
     <button class="chat-toggle-btn pulse-glow" id="chatToggleBtn" aria-label="Open Chat">💬</button>
 
     <div class="chat-window hidden" id="chatWindow">
@@ -217,15 +227,5 @@
 
     <script src="chatbot.js"></script>
     <script src="terminal-palette-tilt.js"></script>
-    <script>
-        const menuBtn = document.getElementById('mobileMenuBtn');
-        const navLinks = document.getElementById('navLinks');
-        if (menuBtn) {
-            menuBtn.addEventListener('click', () => {
-                menuBtn.classList.toggle('active');
-                navLinks.classList.toggle('open');
-            });
-        }
-    </script>
 </body>
 </html>
