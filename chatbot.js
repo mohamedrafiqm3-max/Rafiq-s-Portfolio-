@@ -1,4 +1,4 @@
-     document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.getElementById("chatToggleBtn");
     const closeBtn = document.getElementById("chatCloseBtn");
     const chatWindow = document.getElementById("chatWindow");
@@ -33,12 +33,6 @@
                 appendMessage(response, "bot");
             }, 400);
         });
-    }
-
-    // Restore Google login session on page load
-    const savedUser = localStorage.getItem("google_user");
-    if (savedUser) {
-        updateUserUI(JSON.parse(savedUser));
     }
 });
 
@@ -76,17 +70,16 @@ function appendMessage(text, sender) {
 
 // Knowledge Base & Keyword Matching
 function getBotResponse(input) {
-                 if (input.includes("certif") || input.includes("course") || input.includes("cisco") || input.includes("ibm") || input.includes("hp") || input.includes("p&g") || input.includes("safalta") || input.includes("canva")) {
-                return "Mohamed holds several professional certifications:<br>" +
-                       "• <b>Canva Design School:</b> Marketing with Canva, AI Skills, Visual Suite & Essentials<br>" +
-                       "• <b>AWS:</b> Introduction to Claude Platform on AWS<br>" +
-                       "• <b>HP LIFE:</b> Data Science & Analytics Certificate<br>" +
-                       "• <b>Cisco Networking Academy:</b> Data Analytics Essentials & Cybersecurity<br>" +
-                       "• <b>IBM SkillsBuild:</b> Getting Started with Generative AI<br><br>" +
-                       "🔗 You can view all certificate details on the <a href='certificate.html' style='color:#007bff;font-weight:bold;'>Certificates Page</a>!";
-            }
-
-     else if (input.includes("who") || input.includes("about") || input.includes("background") || input.includes("degree") || input.includes("college") || input.includes("education")) {
+    if (input.includes("certif") || input.includes("course") || input.includes("cisco") || input.includes("ibm") || input.includes("hp") || input.includes("nxtwave") || input.includes("canva")) {
+        return "Mohamed holds several professional certifications:<br>" +
+               "• <b>NxtWave:</b> MCP Workshop: Build AI Automations That Work For You<br>" +
+               "• <b>Canva Design School:</b> Marketing with Canva, AI Skills, Visual Suite & Essentials<br>" +
+               "• <b>AWS:</b> Introduction to Claude Platform on AWS & Prompt Engineering<br>" +
+               "• <b>HP LIFE:</b> Data Science & Analytics Certificate<br>" +
+               "• <b>Cisco Networking Academy:</b> Data Analytics Essentials & Cybersecurity<br>" +
+               "• <b>IBM SkillsBuild:</b> Getting Started with Generative AI<br><br>" +
+               "🔗 You can view all certificate details on the <a href='certificate.html' style='color:#0284c7;font-weight:bold;'>Certificates Page</a>!";
+    } else if (input.includes("who") || input.includes("about") || input.includes("background") || input.includes("degree") || input.includes("college") || input.includes("education")) {
         return "<b>Mohamed Rafiq.M</b> is a 3rd-year <b>B.Com (Computer Applications)</b> student at Thiruthangal Nadar College (Madras University). He bridges business management, data analytics, and modern web engineering.";
     } else if (input.includes("skill") || input.includes("tool") || input.includes("technol") || input.includes("programming")) {
         return "Mohamed's technical toolkit includes:<br>" +
@@ -108,11 +101,10 @@ function getBotResponse(input) {
                "💼 LinkedIn: <a href='https://www.linkedin.com/in/mohamed-rafiq-m-221591351' target='_blank'>LinkedIn Profile</a><br>" +
                "📍 Location: Vyasarpadi, Chennai - 600 039";
     } else if (input.includes("resume") || input.includes("cv") || input.includes("download")) {
-        return "📄 You can download his official resume <a href='Rafiq Resume.pdf' download='Mohamed_Rafiq_Resume.pdf' style='color:#007bff;font-weight:bold;'>Right Here</a>.";
+        return "📄 You can download his official resume <a href='Mohamed_Rafiq_Resume_v3.pdf' download='Mohamed_Rafiq_Resume.pdf' style='color:#0284c7;font-weight:bold;'>Right Here</a>.";
     } else if (input.includes("hi") || input.includes("hello") || input.includes("hey")) {
         return "Hello! 👋 Feel free to ask me about Mohamed's skills, projects, certificates, internship at Lotus Shipping Company, or contact details!";
     } else {
-        return "I'm not sure about that specific query, but you can reach Mohamed directly via email at <b>mohamedrafiqmt9@gmail.com</b> or check out his certificates on the main menu!";
+        return "I'm not sure about that specific query, but you can reach Mohamed directly via email at <b>mohamedrafiqmt9@gmail.com</b>!";
     }
 }
-
