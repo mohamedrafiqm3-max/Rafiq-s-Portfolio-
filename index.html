@@ -13,7 +13,15 @@
     <!-- Header Navigation with Interactive Tools -->
     <header class="main-header">
         <div class="logo">Mohamed Rafiq.M</div>
-        <nav>
+        
+        <!-- Mobile Menu Toggle Button -->
+        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="nav-links" id="navLinks">
             <a href="index.html" class="active">Home</a>
             <a href="about.html">About</a>
             <a href="certificate.html">Certificate</a>
@@ -49,8 +57,10 @@
                 <div class="card-img-wrapper">
                     <img src="Screenshot_20261031_140926_Chrome.jpg" alt="Resume Preview" class="card-img">
                 </div>
-                <h3>Resume</h3>
-                <p>Check out my detailed resume highlighting technical skills, certifications, and experience.</p>
+                <div class="card-content">
+                    <h3>Resume</h3>
+                    <p>Check out my detailed resume highlighting technical skills, certifications, and experience.</p>
+                </div>
                 <div class="card-actions">
                     <a href="Mohamed_Rafiq_Resume_v3.pdf" target="_blank" class="btn">View Resume</a>
                     <a href="Mohamed_Rafiq_Resume_v3.pdf" download="Mohamed_Rafiq_Resume.pdf" class="btn btn-outline">Download Resume</a>
@@ -61,8 +71,10 @@
                 <div class="card-img-wrapper">
                     <img src="zentaxic.png" alt="Zentaxic Project Screenshot" class="card-img">
                 </div>
-                <h3>Zentaxic - Smart GST & Tax Invoice</h3>
-                <p>A smart tax invoice and GST calculator tool designed to streamline billing and tax computations.</p>
+                <div class="card-content">
+                    <h3>Zentaxic - Smart GST & Tax Invoice</h3>
+                    <p>A smart tax invoice and GST calculator tool designed to streamline billing and tax computations.</p>
+                </div>
                 <div class="card-actions">
                     <a href="https://zentaxic2.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                 </div>
@@ -72,8 +84,10 @@
                 <div class="card-img-wrapper">
                     <img src="shipvertex.png" alt="ShipVertex Project Screenshot" class="card-img">
                 </div>
-                <h3>ShipVertex - Logistics Expense Tracker</h3>
-                <p>A web-based financial tracking application to manage and organize daily expenses easily.</p>
+                <div class="card-content">
+                    <h3>ShipVertex - Logistics Expense Tracker</h3>
+                    <p>A web-based financial tracking application to manage and organize daily expenses easily.</p>
+                </div>
                 <div class="card-actions">
                     <a href="https://express-tracker4-m2aj.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn">View App</a>
                 </div>
@@ -83,8 +97,10 @@
                 <div class="card-img-wrapper">
                     <img src="content.png" alt="Sustainable Travel Content Strategy Screenshot" class="card-img">
                 </div>
-                <h3>Sustainable Travel Content Calendar</h3>
-                <p>1-Week Sustainable Travel Campaign Strategy for Chennai & ECR coastal region, featuring visual concepts and hooks.</p>
+                <div class="card-content">
+                    <h3>Sustainable Travel Content Calendar</h3>
+                    <p>1-Week Sustainable Travel Campaign Strategy for Chennai & ECR coastal region, featuring visual concepts and hooks.</p>
+                </div>
                 <div class="card-actions">
                     <a href="ilovepdf_merged.pdf" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                 </div>
@@ -94,8 +110,10 @@
                 <div class="card-img-wrapper">
                     <img src="studentexcel.png" alt="Excel Enrollment Dashboard Screenshot" class="card-img">
                 </div>
-                <h3>Excel Mini Project</h3>
-                <p>Student Skill Course Enrollment dashboard and data tracking system.</p>
+                <div class="card-content">
+                    <h3>Excel Mini Project</h3>
+                    <p>Student Skill Course Enrollment dashboard and data tracking system.</p>
+                </div>
                 <div class="card-actions">
                     <a href="https://docs.google.com/spreadsheets/d/1cIxSWKRds_CDCPSvsNmOIk3enHzFRv3V/edit?usp=sharing" target="_blank" rel="noopener noreferrer" class="btn">View Project</a>
                 </div>
@@ -105,8 +123,10 @@
                 <div class="card-img-wrapper">
                     <img src="youtube.png" alt="YouTube Channel Preview Screenshot" class="card-img">
                 </div>
-                <h3>Content Creation & Editing</h3>
-                <p>My gaming YouTube channel where I manage video editing pipelines and monitor channel performance analytics.</p>
+                <div class="card-content">
+                    <h3>Content Creation & Editing</h3>
+                    <p>My gaming YouTube channel where I manage video editing pipelines and monitor channel performance analytics.</p>
+                </div>
                 <div class="card-actions">
                     <a href="https://www.youtube.com/@RTechPhoenix-k5h" target="_blank" rel="noopener noreferrer" class="btn">Watch Content</a>
                 </div>
@@ -124,5 +144,14 @@
     <!-- Script Imports -->
     <script src="chatbot.js"></script>
     <script src="terminal-palette-tilt.js"></script>
+    <script>
+        // Mobile Menu Toggle Handler
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            navLinks.classList.toggle('open');
+            menuBtn.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
