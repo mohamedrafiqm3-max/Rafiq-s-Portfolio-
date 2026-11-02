@@ -3,784 +3,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Certificates | Mohamed Rafiq.M</title>
-    <!-- Favicon Tag -->
+    <title>Contact Me | Mohamed Rafiq.M</title>
     <link rel="icon" type="image/png" href="1001440692-removebg-preview.png">
+    <link rel="stylesheet" href="style.css">
     <style>
-        /* Base Variables & Styles */
-        :root {
-            --bg-light: #f8fafc;
-            --card-bg: #ffffff;
-            --primary-blue: #0284c7;
-            --accent-cyan: #0891b2;
-            --glow-color: rgba(2, 132, 199, 0.35);
-            --text-primary: #0f172a;
-            --text-secondary: #334155;
-            --border-color: #cbd5e1;
+        .contact-container {
+            max-width: 650px;
+            margin: 50px auto;
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: 16px;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin-top: 20px;
         }
-
-        body {
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .form-group label {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+        }
+        .form-group input, .form-group textarea {
+            padding: 12px;
+            border: 1px solid var(--border-color);
             background-color: var(--bg-light);
             color: var(--text-primary);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 100vh;
-            padding: 30px 20px;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        .title-section {
-            text-align: center;
-            margin-bottom: 25px;
-        }
-
-        .title-section h1 {
-            color: var(--text-primary);
-            font-size: 26pt;
-            font-weight: 800;
-            margin-bottom: 6px;
-            letter-spacing: -0.5px;
-        }
-
-        .title-section p {
-            color: var(--text-secondary);
-            font-size: 11.5pt;
-            font-weight: 450;
-        }
-
-        /* Toolbar: Search & Category Filters */
-        .toolbar {
-            max-width: 750px;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-            margin-bottom: 20px;
-        }
-
-        .search-box {
-            width: 100%;
-        }
-
-        .search-box input {
-            width: 100%;
-            padding: 12px 16px;
-            border: 1px solid var(--border-color);
-            border-radius: 10px;
-            font-size: 1rem;
-            outline: none;
-            background-color: var(--card-bg);
-            color: var(--text-primary);
-            font-weight: 500;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-            transition: all 0.2s ease;
-        }
-
-        .search-box input:focus {
-            border-color: var(--primary-blue);
-            box-shadow: 0 0 10px rgba(2, 132, 199, 0.25);
-            background-color: #ffffff;
-        }
-
-        .filter-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            justify-content: center;
-        }
-
-        .filter-btn {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            color: var(--text-secondary);
-            padding: 7px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            color: #ffffff;
-            border-color: transparent;
-            box-shadow: 0 0 10px rgba(2, 132, 199, 0.3);
-        }
-
-        /* Slideshow Container */
-        .slideshow-container {
-            max-width: 750px;
-            width: 100%;
-            position: relative;
-            background: var(--card-bg);
-            padding: 28px;
-            border-radius: 16px;
-            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05), 0 0 15px rgba(2, 132, 199, 0.08);
-            border: 1px solid var(--border-color);
-            overflow: hidden;
-            transition: all 0.3s ease;
-        }
-
-        .slideshow-container:hover {
-            box-shadow: 0 15px 35px rgba(2, 132, 199, 0.12), 0 0 20px rgba(8, 145, 178, 0.15);
-            border-color: var(--primary-blue);
-        }
-
-        .slide-counter {
-            position: absolute;
-            top: 18px;
-            right: 22px;
-            font-size: 0.9rem;
-            color: #64748b;
-            font-weight: 700;
-            z-index: 10;
-        }
-
-        /* Hide slides by default */
-        .mySlides {
-            display: none;
-            text-align: center;
-            position: relative;
-        }
-
-        /* Growing & Color Effect */
-        .grow-color {
-            animation: growAndColor 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-        }
-
-        @keyframes growAndColor {
-            0% {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            100% {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Image Wrapper & Zoom Overlay */
-        .img-wrapper {
-            position: relative;
-            display: inline-block;
-            width: 100%;
-            cursor: pointer;
-        }
-
-        .certificate-img {
-            width: 100%;
-            height: auto;
-            max-height: 440px;
-            object-fit: contain;
-            border: 2px solid var(--border-color);
-            border-radius: 10px;
-            margin-bottom: 15px;
-            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .img-wrapper:hover .certificate-img {
-            border-color: var(--primary-blue);
-            transform: scale(1.01);
-            box-shadow: 0 8px 20px rgba(2, 132, 199, 0.15);
-        }
-
-        .zoom-hint {
-            position: absolute;
-            bottom: 25px;
-            right: 15px;
-            background: rgba(15, 23, 42, 0.85);
-            color: #ffffff;
-            font-size: 0.8rem;
-            padding: 6px 12px;
-            border-radius: 6px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            pointer-events: none;
-            font-weight: 600;
-        }
-
-        .img-wrapper:hover .zoom-hint {
-            opacity: 1;
-        }
-
-        /* Certificate Details Text */
-        .cert-title {
-            font-size: 14.5pt;
-            color: var(--text-primary);
-            font-weight: 700;
-            margin-bottom: 6px;
-        }
-
-        .cert-vendor {
-            font-size: 10.5pt;
-            color: var(--text-secondary);
-            font-weight: 500;
-            margin-bottom: 10px;
-        }
-
-        /* Navigation Arrows */
-        .prev, .next {
-            cursor: pointer;
-            position: absolute;
-            top: 42%;
-            width: auto;
-            padding: 14px 18px;
-            margin-top: -22px;
-            color: var(--primary-blue);
-            font-weight: bold;
-            font-size: 20px;
-            transition: 0.2s ease;
-            user-select: none;
-            border-radius: 50%;
-            background-color: rgba(255, 255, 255, 0.95);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-            border: 1px solid var(--border-color);
-        }
-
-        .next { right: 15px; }
-        .prev { left: 15px; }
-        .prev:hover, .next:hover {
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            color: #ffffff;
-            border-color: transparent;
-            box-shadow: 0 0 12px rgba(2, 132, 199, 0.4);
-        }
-
-        /* Dot Indicators */
-        .dot-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            max-width: 250px;
-            margin: 20px auto 0 auto;
-            gap: 8px 10px;
-        }
-
-        .dot {
-            cursor: pointer;
-            height: 10px;
-            width: 10px;
-            background-color: #cbd5e1;
-            border-radius: 50%;
-            display: inline-block;
-            transition: all 0.3s ease;
-        }
-
-        .dot.active {
-            background-color: var(--primary-blue);
-            transform: scale(1.4);
-            box-shadow: 0 0 8px var(--primary-blue);
-        }
-
-        /* Modal Lightbox for Zoom */
-        .lightbox-modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(15, 23, 42, 0.9);
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .lightbox-modal.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
             border-radius: 8px;
-            box-shadow: 0 20px 30px rgba(0,0,0,0.5);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: #ffffff;
-            font-size: 2.5rem;
-            cursor: pointer;
-            font-weight: 300;
-        }
-
-        /* Home Navigation Button */
-        .back-btn {
-            margin-top: 30px;
-            display: inline-block;
-            text-decoration: none;
-            color: var(--primary-blue);
-            font-weight: 700;
-            font-size: 11pt;
-            transition: all 0.2s ease;
-        }
-
-        .back-btn:hover {
-            color: var(--accent-cyan);
-            text-shadow: 0 0 8px rgba(8, 145, 178, 0.3);
-            text-decoration: underline;
-        }
-
-        /* Chatbot Styles */
-        .chat-toggle-btn {
-            position: fixed;
-            bottom: 25px;
-            right: 25px;
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            color: #ffffff;
-            border: none;
-            cursor: pointer;
-            font-size: 1.6rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .pulse-glow {
-            animation: pulse 2s infinite;
-        }
-
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0.5); }
-            70% { box-shadow: 0 0 0 18px rgba(2, 132, 199, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(2, 132, 199, 0); }
-        }
-
-        .chat-toggle-btn:hover {
-            transform: scale(1.08);
-        }
-
-        .chat-window {
-            position: fixed;
-            bottom: 95px;
-            right: 25px;
-            width: 350px;
-            max-width: 90vw;
-            height: 480px;
-            background-color: var(--card-bg);
-            border-radius: 14px;
-            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12), 0 0 15px rgba(2, 132, 199, 0.15);
-            display: flex;
-            flex-direction: column;
-            overflow: hidden;
-            z-index: 1000;
-            transition: all 0.3s ease;
-            border: 1px solid var(--border-color);
-        }
-
-        .chat-window.hidden {
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(20px) scale(0.95);
-            pointer-events: none;
-        }
-
-        .chat-header {
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            color: #ffffff;
-            padding: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 600;
-        }
-
-        .chat-close-btn {
-            background: none;
-            border: none;
-            color: #ffffff;
-            font-size: 1.2rem;
-            cursor: pointer;
-        }
-
-        .chat-body {
-            flex: 1;
-            padding: 15px;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            background-color: #f8fafc;
-        }
-
-        .chat-message {
-            max-width: 82%;
-            padding: 10px 14px;
-            border-radius: 12px;
-            font-size: 0.92rem;
-            line-height: 1.45;
-        }
-
-        .chat-message.bot {
-            background-color: #ffffff;
-            color: var(--text-primary);
-            align-self: flex-start;
-            border: 1px solid var(--border-color);
-            border-bottom-left-radius: 2px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
-        }
-
-        .chat-message.user {
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            color: #ffffff;
-            align-self: flex-end;
-            border-bottom-right-radius: 2px;
-        }
-
-        .chat-chips {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 5px;
-        }
-
-        .chip {
-            background-color: #ffffff;
-            border: 1px solid var(--primary-blue);
-            color: var(--primary-blue);
-            padding: 6px 12px;
-            border-radius: 15px;
-            font-size: 0.82rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.2s ease;
-        }
-
-        .chip:hover {
-            background-color: var(--primary-blue);
-            color: #ffffff;
-            box-shadow: 0 0 10px rgba(2, 132, 199, 0.3);
-        }
-
-        .chat-input-area {
-            display: flex;
-            padding: 10px;
-            background-color: var(--card-bg);
-            border-top: 1px solid var(--border-color);
-        }
-
-        .chat-input-area input {
-            flex: 1;
-            border: 1px solid var(--border-color);
-            background-color: #f8fafc;
-            color: var(--text-primary);
-            padding: 10px 12px;
-            border-radius: 6px;
             outline: none;
-            font-size: 0.92rem;
-            font-weight: 500;
+            font-size: 1rem;
+            transition: border-color 0.2s ease;
         }
-
-        .chat-input-area input:focus {
+        .form-group input:focus, .form-group textarea:focus {
             border-color: var(--primary-blue);
-            box-shadow: 0 0 6px rgba(2, 132, 199, 0.3);
-        }
-
-        .chat-input-area button {
-            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-            color: #ffffff;
-            border: none;
-            padding: 10px 15px;
-            margin-left: 8px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: all 0.2s ease;
-        }
-
-        .chat-input-area button:hover {
-            box-shadow: 0 0 10px rgba(2, 132, 199, 0.4);
-        }
-
-        .no-results {
-            display: none;
-            text-align: center;
-            padding: 30px 10px;
-            color: var(--text-secondary);
-            font-weight: 500;
+            box-shadow: 0 0 8px var(--glow-color);
         }
     </style>
 </head>
 <body>
- 
-    <div class="title-section">
-        <h1>Professional Certifications</h1>
-        <p>Verified technical expertise and professional credentials</p>
-    </div>
+    <header class="main-header">
+        <div class="logo">My Portfolio</div>
+        
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
 
-    <!-- Toolbar: Search & Category Filters -->
-    <div class="toolbar">
-        <div class="search-box">
-            <input type="text" id="certSearch" placeholder="🔍 Search certificates or organizations..." onkeyup="filterCertificates()">
-        </div>
-        <div class="filter-tags">
-            <button class="filter-btn active" onclick="filterCategory('all', this)">All</button>
-            <button class="filter-btn" onclick="filterCategory('nptel', this)">NPTEL</button>
-            <button class="filter-btn" onclick="filterCategory('canva', this)">Canva</button>
-            <button class="filter-btn" onclick="filterCategory('hp', this)">HP LIFE</button>
-            <button class="filter-btn" onclick="filterCategory('aws', this)">AWS</button>
-            <button class="filter-btn" onclick="filterCategory('cisco', this)">Cisco</button>
-            <button class="filter-btn" onclick="filterCategory('ibm', this)">IBM</button>
-            <button class="filter-btn" onclick="filterCategory('udemy', this)">Udemy</button>
-        </div>
-    </div>
+        <nav class="nav-links" id="navLinks">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="certificate.html">Certificate</a>
+            <a href="contact.html" class="active">Contact</a>
 
-    <!-- Main Slideshow Structure -->
-    <div class="slideshow-container">
-        <div class="slide-counter" id="slideCounter">Slide 1 of 21</div>
-
-        <!-- Slide 1: Introduction to GST -->
-        <div class="mySlides grow-color" data-vendor="nptel swayams" data-title="introduction to gst">
-            <div class="img-wrapper" onclick="openLightbox('nptel.png')">
-                <img src="nptel.png" class="certificate-img" alt="Introduction to GST">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
+            <div class="nav-tools">
+                <button class="terminal-toggle-btn" onclick="toggleTerminal()" title="Toggle Developer Terminal Mode">&gt;_</button>
+                <span class="cmd-badge" onclick="toggleCommandPalette(true)">Ctrl + K</span>
             </div>
-            <div class="cert-title">Introduction to GST</div>
-            <div class="cert-vendor">NPTEL Online Certification (Swayam)</div>
-        </div>
+        </nav>
+    </header>
 
-        <!-- Slide 2: MongoDB -->
-        <div class="mySlides grow-color" data-vendor="ict academy" data-title="mongodb and ai fundamentals">
-            <div class="img-wrapper" onclick="openLightbox('mango.png')">
-                <img src="mango.png" class="certificate-img" alt="MongoDB and AI Fundamentals">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
+    <main class="contact-container animate-fade-in">
+        <h1 class="glow-text" style="text-align: center;">Get In Touch</h1>
+        <p class="subtitle" style="text-align: center;">Have a project or opportunity in mind? Send me a message!</p>
+
+        <!-- FormSubmit Integration -->
+        <form class="contact-form" action="https://formsubmit.co/mohamedrafiqmt9@gmail.com" method="POST">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required>
             </div>
-            <div class="cert-title">MongoDB and AI Fundamentals</div>
-            <div class="cert-vendor">ICT Academy Learnathon 2025</div>
-        </div>
-
-        <!-- Slide 3: Data Science -->
-        <div class="mySlides grow-color" data-vendor="hp" data-title="data science & analytics">
-            <div class="img-wrapper" onclick="openLightbox('data.png')">
-                <img src="data.png" class="certificate-img" alt="Data Science & Analytics">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
             </div>
-            <div class="cert-title">Data Science & Analytics</div>
-            <div class="cert-vendor">HP LIFE / HP Foundation</div>
-        </div>
-
-        <!-- Slide 4: Human Resource Management -->
-        <div class="mySlides grow-color" data-vendor="udemy" data-title="introduction to human resources management">
-            <div class="img-wrapper" onclick="openLightbox('Screenshot 2026-06-22 153702.png')">
-                <img src="Screenshot 2026-06-22 153702.png" class="certificate-img" alt="Introduction to Human Resources Management">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
+            <div class="form-group">
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
             </div>
-            <div class="cert-title">Introduction to Human Resources Management</div>
-            <div class="cert-vendor">Udemy (MTF Institute of Management, Technology and Finance)</div>
-        </div>
+            <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Send Message</button>
+        </form>
+    </main>
 
-        <!-- Slide 5: Data Protection Officer -->
-        <div class="mySlides grow-color" data-vendor="udemy" data-title="certified data protection officer (cdpo) training">
-            <div class="img-wrapper" onclick="openLightbox('dop.png')">
-                <img src="dop.png" class="certificate-img" alt="Certified Data Protection Officer (CDPO) Training">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">Certified Data Protection Officer (CDPO) Training</div>
-            <div class="cert-vendor">Udemy (Bespoke Learning Solutions)</div>
-        </div>
+    <footer>
+        <h2>Let's Connect</h2>
+        <p>Email: <a href="mailto:mohamedrafiqmt9@gmail.com">mohamedrafiqmt9@gmail.com</a></p>
+        <p><a href="https://www.linkedin.com/in/mohamed-rafiq-m-221591351" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a></p>
+    </footer>
 
-        <!-- Slide 6: Generative AI -->
-        <div class="mySlides grow-color" data-vendor="ibm" data-title="getting started with generative ai">
-            <div class="img-wrapper" onclick="openLightbox('Screenshot_20260708_140408_Chrome.jpg')">
-                <img src="Screenshot_20260708_140408_Chrome.jpg" class="certificate-img" alt="Getting Started with Generative AI">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">Getting Started with Generative AI</div>
-            <div class="cert-vendor">IBM SkillsBuild</div>
-        </div>
-
-        <!-- Slide 7: Data Analytics Essentials -->
-        <div class="mySlides grow-color" data-vendor="cisco" data-title="data analytics essentials">
-            <div class="img-wrapper" onclick="openLightbox('Screenshot_20260717_174733_My Files.jpg')">
-                <img src="Screenshot_20260717_174733_My Files.jpg" class="certificate-img" alt="Data Analytics Essentials">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">Data Analytics Essentials</div>
-            <div class="cert-vendor">Cisco Networking Academy</div>
-        </div>
-
-        <!-- Slide 8: AI for Business Professionals -->
-        <div class="mySlides grow-color" data-vendor="hp" data-title="ai for business professionals">
-            <div class="img-wrapper" onclick="openLightbox('Screenshot_20260725_165958_Drive.jpg')">
-                <img src="Screenshot_20260725_165958_Drive.jpg" class="certificate-img" alt="AI for Business Professionals">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">AI for Business Professionals</div>
-            <div class="cert-vendor">HP LIFE / HP Foundation</div>
-        </div>
-
-        <!-- Slide 9: AI for Beginners -->
-        <div class="mySlides grow-color" data-vendor="hp" data-title="ai for beginners">
-            <div class="img-wrapper" onclick="openLightbox('Screenshot_20260729_083217_Drive.jpg')">
-                <img src="Screenshot_20260729_083217_Drive.jpg" class="certificate-img" alt="AI for Beginners">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">AI for Beginners</div>
-            <div class="cert-vendor">HP LIFE / HP Foundation</div>
-        </div>
-
-        <!-- Slide 10: Introduction to Digital Business Skills -->
-        <div class="mySlides grow-color" data-vendor="hp" data-title="introduction to digital business skills">
-            <div class="img-wrapper" onclick="openLightbox('Screenshot_20260731_082543_My Files.jpg')">
-                <img src="Screenshot_20260731_082543_My Files.jpg" class="certificate-img" alt="Introduction to Digital Business Skills">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">Introduction to Digital Business Skills</div>
-            <div class="cert-vendor">HP LIFE / HP Foundation</div>
-        </div>
-
-        <!-- Slide 11: Introduction to Cybersecurity -->
-        <div class="mySlides grow-color" data-vendor="cisco" data-title="introduction to cybersecurity">
-            <div class="img-wrapper" onclick="openLightbox('Screenshot_20260803_122827_Chrome.jpg')">
-                <img src="Screenshot_20260803_122827_Chrome.jpg" class="certificate-img" alt="Introduction to Cybersecurity">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">Introduction to Cybersecurity</div>
-            <div class="cert-vendor">Cisco Networking Academy</div>
-        </div>
-
-        <!-- Slide 12: AI skills for students -->
-        <div class="mySlides grow-color" data-vendor="canva" data-title="ai skills for students">
-            <div class="img-wrapper" onclick="openLightbox('Screenshot_20260808_122614_Chrome.jpg')">
-                <img src="Screenshot_20260808_122614_Chrome.jpg" class="certificate-img" alt="AI skills for students">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">AI skills for students</div>
-            <div class="cert-vendor">Canva Design School</div>
-        </div>
-
-        <!-- Slide 13: Meet Canva's Visual Suite -->
-        <div class="mySlides grow-color" data-vendor="canva" data-title="meet canva's visual suite">
-            <div class="img-wrapper" onclick="openLightbox('Screenshot_20260808_122620_Chrome.jpg')">
-                <img src="Screenshot_20260808_122620_Chrome.jpg" class="certificate-img" alt="Meet Canva's Visual Suite">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">Meet Canva's Visual Suite</div>
-            <div class="cert-vendor">Canva Design School</div>
-        </div>
-
-        <!-- Slide 14: Canva Essentials -->
-        <div class="mySlides grow-color" data-vendor="canva" data-title="canva essentials">
-            <div class="img-wrapper" onclick="openLightbox('Screenshot_20260808_122625_Chrome.jpg')">
-                <img src="Screenshot_20260808_122625_Chrome.jpg" class="certificate-img" alt="Canva Essentials">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">Canva Essentials</div>
-            <div class="cert-vendor">Canva Design School</div>
-        </div>
-
-        <!-- Slide 15: Introduction to Claude Platform on AWS -->
-        <div class="mySlides grow-color" data-vendor="aws" data-title="introduction to claude platform on aws">
-            <div class="img-wrapper" onclick="openLightbox('Aws.jpg')">
-                <img src="Aws.jpg" class="certificate-img" alt="Introduction to Claude Platform on AWS">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">Introduction to Claude Platform on AWS</div>
-            <div class="cert-vendor">AWS Training & Certification</div>
-        </div>
-
-        <!-- Slide 16: Marketing with Canva -->
-        <div class="mySlides grow-color" data-vendor="canva" data-title="marketing with canva">
-            <div class="img-wrapper" onclick="openLightbox('Canva market cert-title .jpg')">
-                <img src="Canva market cert-title .jpg" class="certificate-img" alt="Marketing with Canva">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">Marketing with Canva</div>
-            <div class="cert-vendor">Canva Design School</div>
-        </div>
-
-        <!-- Slide 17: Foundation of Prompt Engineering -->
-        <div class="mySlides grow-color" data-vendor="aws" data-title="foundation of prompt engineering certificate">
-            <div class="img-wrapper" onclick="openLightbox('Fundamentals of prompt engineering  certificate .jpg')">
-                <img src="Fundamentals of prompt engineering  certificate .jpg" class="certificate-img" alt="Foundation of Prompt Engineering Certificate">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">Foundation of Prompt Engineering Certificate</div>
-            <div class="cert-vendor">AWS Training & Certification</div>
-        </div>
-
-        <!-- Slide 18: IoT Security Analyst Certificate -->
-        <div class="mySlides grow-color" data-vendor="tn skill" data-title="iot security analyst certificate">
-            <div class="img-wrapper" onclick="openLightbox('Iot security analyst  certificate .jpg')">
-                <img src="Iot security analyst  certificate .jpg" class="certificate-img" alt="Professional Certification">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">TN Skill Certification</div>
-            <div class="cert-vendor">IOT Security Analyst Certificate</div>
-        </div>
-
-        <!-- Slide 19: NxtWave Certificate -->
-        <div class="mySlides grow-color" data-vendor="nxtwave" data-title="mcp workshop: build ai automations that work for you">
-            <div class="img-wrapper" onclick="openLightbox('Screenshot_20260914_100655_Gallery.jpg')">
-                <img src="Screenshot_20260914_100655_Gallery.jpg" class="certificate-img" alt="MCP Workshop: Build AI Automations That Work For You">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">MCP Workshop: Build AI Automations That Work For You</div>
-            <div class="cert-vendor">NxtWave (Led by Mr. Revanth Konakanchi)</div>
-        </div>
-
-        <!-- Slide 20: Google Ads Search Certificate -->
-        <div class="mySlides grow-color" data-vendor="google" data-title="google ads search certification">
-            <div class="img-wrapper" onclick="openLightbox('Google search ad certificate .jpg')">
-                <img src="Google search ad certificate .jpg" class="certificate-img" alt="Google Ads Search Certification">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">Google Certification</div>
-            <div class="cert-vendor">Google Ads Search Certification</div>
-        </div>
-
-        <!-- Slide 21: TCS ION career edge - AI Foundations -->
-        <div class="mySlides grow-color" data-vendor="tcs tata" data-title="tcs ion career edge - ai foundations certificate">
-            <div class="img-wrapper" onclick="openLightbox('Screenshot_20260914_102440_My Files.jpg')">
-                <img src="Screenshot_20260914_102440_My Files.jpg" class="certificate-img" alt="TCS ION career edge - AI Foundations Certificate">
-                <span class="zoom-hint">🔍 View Fullscreen</span>
-            </div>
-            <div class="cert-title">TCS ION career edge - AI Foundations Certificate</div>
-            <div class="cert-vendor">TATA Certification</div>
-        </div>
-
-        <div class="no-results" id="noResults">
-            No matching certificates found for your search.
-        </div>
-
-        <!-- Navigation arrows -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-    </div>
-
-    <!-- Dot Indicators Container -->
-    <div class="dot-container" id="dotContainer"></div>
-
-    <!-- Fullscreen Lightbox Modal -->
-    <div class="lightbox-modal" id="lightboxModal" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
-        <img class="lightbox-content" id="lightboxImg" alt="Enlarged Certificate">
-    </div>
-
-    <!-- Chatbot Floating Toggle Button -->
     <button class="chat-toggle-btn pulse-glow" id="chatToggleBtn" aria-label="Open Chat">💬</button>
 
-    <!-- Chatbot Window -->
     <div class="chat-window hidden" id="chatWindow">
         <div class="chat-header">
             <h4>Ask Rafiq's Assistant 🤖</h4>
@@ -806,247 +127,16 @@
         </form>
     </div>
 
-    <a href="index.html" class="back-btn">← Back to Homepage</a>
-
-    <!-- JavaScript Engine -->
+    <script src="chatbot.js"></script>
+    <script src="terminal-palette-tilt.js"></script>
     <script>
-        let slideIndex = 1;
-        let slideTimer;
-        let activeSlides = [];
-
-        document.addEventListener("DOMContentLoaded", () => {
-            initSlideshow();
-
-            const toggleBtn = document.getElementById("chatToggleBtn");
-            const closeBtn = document.getElementById("chatCloseBtn");
-            const chatWindow = document.getElementById("chatWindow");
-            const chatForm = document.getElementById("chatForm");
-            const chatInput = document.getElementById("chatInput");
-
-            if (toggleBtn) {
-                toggleBtn.addEventListener("click", () => {
-                    chatWindow.classList.toggle("hidden");
-                });
-            }
-
-            if (closeBtn) {
-                closeBtn.addEventListener("click", () => {
-                    chatWindow.classList.add("hidden");
-                });
-            }
-
-            if (chatForm) {
-                chatForm.addEventListener("submit", (e) => {
-                    e.preventDefault();
-                    const text = chatInput.value.trim();
-                    if (!text) return;
-
-                    appendMessage(text, "user");
-                    chatInput.value = "";
-
-                    setTimeout(() => {
-                        const response = getBotResponse(text.toLowerCase());
-                        appendMessage(response, "bot");
-                    }, 400);
-                });
-            }
-
-            document.addEventListener("keydown", (e) => {
-                if (e.key === "Escape") closeLightbox();
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                menuBtn.classList.toggle('active');
+                navLinks.classList.toggle('open');
             });
-        });
-
-        function initSlideshow() {
-            let allSlides = document.getElementsByClassName("mySlides");
-            activeSlides = Array.from(allSlides);
-            buildDots(activeSlides.length);
-            showSlides(slideIndex);
-            resetTimer();
-        }
-
-        function buildDots(count) {
-            const container = document.getElementById("dotContainer");
-            container.innerHTML = "";
-            for (let i = 1; i <= count; i++) {
-                let dot = document.createElement("span");
-                dot.className = "dot";
-                dot.onclick = () => currentSlide(i);
-                container.appendChild(dot);
-            }
-        }
-
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-            resetTimer();
-        }
-
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-            resetTimer();
-        }
-
-        function showSlides(n) {
-            let dots = document.getElementsByClassName("dot");
-            let counter = document.getElementById("slideCounter");
-            let noResults = document.getElementById("noResults");
-
-            if (activeSlides.length === 0) {
-                noResults.style.display = "block";
-                counter.innerText = "0 of 0";
-                return;
-            } else {
-                noResults.style.display = "none";
-            }
-
-            if (n > activeSlides.length) { slideIndex = 1; }
-            if (n < 1) { slideIndex = activeSlides.length; }
-
-            let allSlides = document.getElementsByClassName("mySlides");
-            for (let i = 0; i < allSlides.length; i++) {
-                allSlides[i].style.display = "none";
-            }
-
-            for (let i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-
-            activeSlides[slideIndex - 1].style.display = "block";
-            if (dots[slideIndex - 1]) dots[slideIndex - 1].className += " active";
-            counter.innerText = `Slide ${slideIndex} of ${activeSlides.length}`;
-        }
-
-        function resetTimer() {
-            clearInterval(slideTimer);
-            if (activeSlides.length > 1) {
-                slideTimer = setInterval(() => {
-                    slideIndex++;
-                    showSlides(slideIndex);
-                }, 3500);
-            }
-        }
-
-        function filterCertificates() {
-            const query = document.getElementById("certSearch").value.toLowerCase();
-            const allSlides = Array.from(document.getElementsByClassName("mySlides"));
-
-            activeSlides = allSlides.filter(slide => {
-                const title = slide.getAttribute("data-title") || "";
-                const vendor = slide.getAttribute("data-vendor") || "";
-                return title.includes(query) || vendor.includes(query);
-            });
-
-            document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
-            
-            buildDots(activeSlides.length);
-            slideIndex = 1;
-            showSlides(slideIndex);
-            resetTimer();
-        }
-
-        function filterCategory(category, btnElement) {
-            document.querySelectorAll(".filter-btn").forEach(btn => btn.classList.remove("active"));
-            btnElement.classList.add("active");
-
-            document.getElementById("certSearch").value = "";
-            const allSlides = Array.from(document.getElementsByClassName("mySlides"));
-
-            if (category === "all") {
-                activeSlides = allSlides;
-            } else {
-                activeSlides = allSlides.filter(slide => {
-                    const vendor = slide.getAttribute("data-vendor") || "";
-                    return vendor.toLowerCase().includes(category.toLowerCase());
-                });
-            }
-
-            buildDots(activeSlides.length);
-            slideIndex = 1;
-            showSlides(slideIndex);
-            resetTimer();
-        }
-
-        function openLightbox(src) {
-            const modal = document.getElementById("lightboxModal");
-            const img = document.getElementById("lightboxImg");
-            img.src = src;
-            modal.classList.add("active");
-            clearInterval(slideTimer);
-        }
-
-        function closeLightbox() {
-            const modal = document.getElementById("lightboxModal");
-            modal.classList.remove("active");
-            resetTimer();
-        }
-
-        function handleChipClick(topic) {
-            const chipsContainer = document.getElementById("chatChips");
-            if (chipsContainer) chipsContainer.style.display = "none";
-
-            let userText = "";
-            if (topic === "skills") userText = "What are your skills?";
-            else if (topic === "projects") userText = "Tell me about your projects.";
-            else if (topic === "certificates") userText = "What certificates do you have?";
-            else if (topic === "contact") userText = "How can I contact you?";
-            else if (topic === "resume") userText = "Where can I get your resume?";
-
-            appendMessage(userText, "user");
-
-            setTimeout(() => {
-                const response = getBotResponse(userText.toLowerCase());
-                appendMessage(response, "bot");
-            }, 400);
-        }
-
-        function appendMessage(text, sender) {
-            const chatBody = document.getElementById("chatBody");
-            if (!chatBody) return;
-            
-            const msgDiv = document.createElement("div");
-            msgDiv.classList.add("chat-message", sender);
-            msgDiv.innerHTML = text;
-            chatBody.appendChild(msgDiv);
-            chatBody.scrollTop = chatBody.scrollHeight;
-        }
-
-        function getBotResponse(input) {
-            if (input.includes("certif") || input.includes("course") || input.includes("cisco") || input.includes("ibm") || input.includes("hp") || input.includes("nxtwave") || input.includes("canva")) {
-                return "Mohamed holds several professional certifications:<br>" +
-                       "• <b>NxtWave:</b> MCP Workshop: Build AI Automations That Work For You<br>" +
-                       "• <b>Canva Design School:</b> Marketing with Canva, AI Skills, Visual Suite & Essentials<br>" +
-                       "• <b>AWS:</b> Introduction to Claude Platform on AWS & Prompt Engineering<br>" +
-                       "• <b>HP LIFE:</b> Data Science & Analytics Certificate<br>" +
-                       "• <b>Cisco Networking Academy:</b> Data Analytics Essentials & Cybersecurity<br>" +
-                       "• <b>IBM SkillsBuild:</b> Getting Started with Generative AI<br><br>" +
-                       "🔗 You can view all certificate details right here on the <a href='certificate.html' style='color:#0284c7;font-weight:bold;'>Certificates Page</a>!";
-            } else if (input.includes("who") || input.includes("about") || input.includes("background") || input.includes("degree") || input.includes("college") || input.includes("education")) {
-                return "<b>Mohamed Rafiq.M</b> is a 3rd-year <b>B.Com (Computer Applications)</b> student at Thiruthangal Nadar College (Madras University). He bridges business management, data analytics, and modern web engineering.";
-            } else if (input.includes("skill") || input.includes("tool") || input.includes("technol") || input.includes("programming")) {
-                return "Mohamed's technical toolkit includes:<br>" +
-                       "• <b>Data Analytics & BI:</b> Power BI, SPSS Statistics, Advanced Excel, Python<br>" +
-                       "• <b>Web Development:</b> HTML5, CSS3, MySQL, GitHub<br>" +
-                       "• <b>Core Business:</b> Corporate Accounting, Tally Prime, Business Law<br>" +
-                       "• <b>AI & Multimedia:</b> Prompt Engineering (ChatGPT, Gemini, Meta AI) & Video Editing";
-            } else if (input.includes("project") || input.includes("work") || input.includes("portfolio")) {
-                return "Here are Mohamed's featured projects:<br>" +
-                       "1. <b>Sustainable Travel Content Calendar:</b> 1-Week campaign strategy for Chennai & ECR coast.<br>" +
-                       "2. <b>Excel Mini Project:</b> Student Skill Course Enrollment tracking dashboard.<br>" +
-                       "3. <b>Personal Web Portfolio:</b> Custom HTML/CSS/JS deployed on GitHub Pages.<br>" +
-                       "4. <b>R Tech Phoenix Channel:</b> YouTube content pipeline & analytics management.";
-            } else if (input.includes("internship") || input.includes("lotus") || input.includes("shipping") || input.includes("experience")) {
-                return "Mohamed completed a 15-day <b>Data Analysis Internship in Logistics & Operations</b> at <b>Lotus Shipping Company</b>. You can download his full <a href='https://raw.githubusercontent.com/mohamedrafiqm3-max/Rafiq-s-Portfolio-/main/Lotus%20company%20internship%20report.pdf' target='_blank'>Internship Report Here</a>.";
-            } else if (input.includes("contact") || input.includes("email") || input.includes("reach") || input.includes("linkedin") || input.includes("phone")) {
-                return "You can get in touch with Mohamed via:<br>" +
-                       "📧 Email: <a href='mailto:mohamedrafiqmt9@gmail.com'>mohamedrafiqmt9@gmail.com</a><br>" +
-                       "💼 LinkedIn: <a href='https://www.linkedin.com/in/mohamed-rafiq-m-221591351' target='_blank'>LinkedIn Profile</a><br>" +
-                       "📍 Location: Vyasarpadi, Chennai - 600 039";
-            } else if (input.includes("resume") || input.includes("cv") || input.includes("download")) {
-                return "📄 You can download his official resume <a href='Rafiq Resume.pdf' download='Mohamed_Rafiq_Resume.pdf' style='color:#0284c7;font-weight:bold;'>Right Here</a>.";
-            } else if (input.includes("hi") || input.includes("hello") || input.includes("hey")) {
-                return "Hello! 👋 Feel free to ask me about Mohamed's skills, projects, certificates, internship at Lotus Shipping Company, or contact details!";
-            } else {
-                return "I'm not sure about that specific query, but you can reach Mohamed directly via email at <b>mohamedrafiqmt9@gmail.com</b>!";
-            }
         }
     </script>
 </body>
