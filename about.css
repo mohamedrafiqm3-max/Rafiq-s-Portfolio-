@@ -284,23 +284,152 @@ footer {
     }
 }
 
-/* Command Palette Modal Styles */
+/* ==========================================================================
+   Modern Designed Developer Terminal Window
+   ========================================================================== */
+.terminal-window {
+    position: fixed;
+    bottom: 25px;
+    left: 25px;
+    width: 440px;
+    max-width: calc(100vw - 32px);
+    height: 340px;
+    background-color: #0b1120;
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    border-radius: 14px;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 25px rgba(56, 189, 248, 0.15);
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.terminal-window.hidden {
+    display: none;
+}
+
+.terminal-header {
+    background: linear-gradient(180deg, #1e293b, #0f172a);
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #1e293b;
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 7px;
+    align-items: center;
+}
+
+.terminal-dots .dot {
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.terminal-dots .dot.red { background-color: #ef4444; }
+.terminal-dots .dot.yellow { background-color: #f59e0b; }
+.terminal-dots .dot.green { background-color: #10b981; }
+
+.terminal-title {
+    flex: 1;
+    text-align: center;
+    font-family: 'Fira Code', monospace, sans-serif;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.terminal-body {
+    flex: 1;
+    padding: 14px;
+    overflow-y: auto;
+    font-family: 'Fira Code', monospace, monospace;
+    font-size: 0.85rem;
+    color: #e2e8f0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    background-color: #090d16;
+}
+
+.term-line {
+    line-height: 1.5;
+    word-break: break-all;
+}
+
+.term-line.system {
+    color: #38bdf8;
+    font-weight: 600;
+}
+
+.term-line.user-cmd {
+    color: #4ade80;
+}
+
+.term-line.error {
+    color: #f87171;
+}
+
+.term-cmd {
+    color: #facc15;
+    background: rgba(250, 204, 21, 0.1);
+    padding: 1px 5px;
+    border-radius: 4px;
+}
+
+.terminal-input-row {
+    display: flex;
+    align-items: center;
+    padding: 10px 14px;
+    background-color: #0b1120;
+    border-top: 1px solid #1e293b;
+    font-family: 'Fira Code', monospace, monospace;
+}
+
+.prompt-symbol {
+    color: #38bdf8;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-right: 8px;
+    white-space: nowrap;
+}
+
+.terminal-input-row input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    color: #f8fafc;
+    font-family: 'Fira Code', monospace, monospace;
+    font-size: 0.85rem;
+    outline: none;
+}
+
+/* ==========================================================================
+   Enhanced Pop-Box Command Palette Modal Styles
+   ========================================================================== */
 .cmd-palette-modal {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(15, 23, 42, 0.7);
-    backdrop-filter: blur(5px);
-    z-index: 2000;
+    background-color: rgba(15, 23, 42, 0.75);
+    backdrop-filter: blur(8px);
+    z-index: 9999;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
-    padding-top: 15vh;
+    align-items: center;
+    padding: 20px;
     opacity: 0;
     visibility: hidden;
-    transition: all 0.25s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .cmd-palette-modal.active {
@@ -319,102 +448,111 @@ footer {
 .cmd-palette-box {
     position: relative;
     background: var(--card-bg);
-    width: 90%;
-    max-width: 600px;
-    border-radius: 12px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    width: 100%;
+    max-width: 580px;
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35), 0 0 25px rgba(2, 132, 199, 0.2);
     border: 1px solid var(--border-color);
     display: flex;
     flex-direction: column;
     overflow: hidden;
-    z-index: 2001;
+    z-index: 10000;
+    transform: scale(0.92) translateY(15px);
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cmd-palette-modal.active .cmd-palette-box {
+    transform: scale(1) translateY(0);
 }
 
 .cmd-palette-header {
     display: flex;
     align-items: center;
-    padding: 14px 18px;
+    padding: 16px 20px;
     border-bottom: 1px solid var(--border-color);
-    background: #f8fafc;
+    background: #ffffff;
 }
 
 .cmd-icon {
-    font-size: 1.1rem;
-    margin-right: 12px;
+    font-size: 1.2rem;
+    margin-right: 14px;
 }
 
 .cmd-palette-header input {
     flex: 1;
     border: none;
     background: transparent;
-    font-size: 1.05rem;
+    font-size: 1.1rem;
     color: var(--text-primary);
     outline: none;
+    font-weight: 500;
 }
 
 .cmd-shortcut {
-    background: #e2e8f0;
+    background: #f1f5f9;
     color: var(--text-secondary);
-    padding: 3px 8px;
-    border-radius: 4px;
+    padding: 4px 10px;
+    border-radius: 6px;
     font-size: 0.8rem;
-    font-weight: 600;
+    font-weight: 700;
+    border: 1px solid var(--border-color);
 }
 
 .cmd-palette-results {
-    max-height: 320px;
+    max-height: 340px;
     overflow-y: auto;
-    padding: 8px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 6px;
 }
 
 .cmd-item {
-    padding: 10px 14px;
-    border-radius: 8px;
+    padding: 12px 16px;
+    border-radius: 10px;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background 0.15s ease;
+    transition: all 0.2s ease;
 }
 
 .cmd-item:hover, .cmd-item.selected {
-    background: #e0f2fe;
+    background: linear-gradient(135deg, rgba(2, 132, 199, 0.08), rgba(8, 145, 178, 0.12));
+    border-color: var(--primary-blue);
 }
 
 .cmd-item-title {
     font-weight: 600;
     color: var(--text-primary);
-    font-size: 0.95rem;
+    font-size: 0.98rem;
 }
 
 .cmd-item-badge {
     background: #f1f5f9;
     color: var(--primary-blue);
-    padding: 2px 8px;
+    padding: 4px 10px;
     border-radius: 6px;
-    font-size: 0.78rem;
+    font-size: 0.8rem;
     font-weight: 600;
     border: 1px solid var(--border-color);
 }
 
 .cmd-palette-footer {
-    padding: 10px 18px;
+    padding: 12px 20px;
     background: #f8fafc;
     border-top: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
-    font-size: 0.8rem;
+    font-size: 0.82rem;
     color: var(--text-secondary);
 }
 
 .cmd-no-results {
     text-align: center;
-    padding: 25px;
+    padding: 30px;
     color: var(--text-secondary);
-    font-size: 0.95rem;
+    font-size: 0.98rem;
 }
 
 /* Chatbot Floating Button & Window */
@@ -593,7 +731,7 @@ footer {
     box-shadow: 0 0 10px rgba(2, 132, 199, 0.4);
 }
 
-/* Mobile Responsive Breakpoint */
+/* Mobile Responsive Breakpoints */
 @media screen and (max-width: 768px) {
     .mobile-menu-btn {
         display: flex;
@@ -636,8 +774,30 @@ footer {
         display: none;
     }
 
-    .container {
-        margin: 20px 12px;
-        padding: 24px 16px;
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chat-window {
+        bottom: 80px;
+        right: 16px;
+        left: 16px;
+        width: auto;
+        max-width: none;
+        height: 420px;
+    }
+
+    .chat-toggle-btn {
+        bottom: 16px;
+        right: 16px;
+    }
+
+    .terminal-window {
+        left: 16px;
+        right: 16px;
+        width: auto;
+        max-width: none;
+        bottom: 16px;
+        height: 300px;
     }
 }
