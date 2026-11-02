@@ -7,21 +7,74 @@
     <link rel="icon" type="image/png" href="1001440692-removebg-preview.png">
     <link rel="stylesheet" href="style.css">
     <style>
-        .contact-container {
-            max-width: 650px;
+        .contact-page-wrapper {
+            max-width: 850px;
             margin: 50px auto;
+            padding: 0 5%;
+        }
+        .contact-card {
             background: var(--card-bg);
-            padding: 40px;
-            border-radius: 16px;
+            border-radius: 20px;
             border: 1px solid var(--border-color);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: background-color 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06), 0 0 20px var(--glow-color);
+            padding: 45px;
+            position: relative;
+            overflow: hidden;
+        }
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 5px;
+            background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.4fr;
+            gap: 40px;
+            margin-top: 30px;
+            align-items: start;
+        }
+        .contact-info h3 {
+            font-size: 1.3rem;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .contact-info p {
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        .social-pills {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .social-pill {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            color: var(--text-primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
+        }
+        .social-pill:hover {
+            border-color: var(--primary-blue);
+            transform: translateX(4px);
+            background: rgba(2, 132, 199, 0.04);
+            color: var(--primary-blue);
         }
         .contact-form {
             display: flex;
             flex-direction: column;
-            gap: 18px;
-            margin-top: 20px;
+            gap: 16px;
         }
         .form-group {
             display: flex;
@@ -31,21 +84,31 @@
         .form-group label {
             font-weight: 600;
             color: var(--text-primary);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
         }
         .form-group input, .form-group textarea {
-            padding: 12px;
+            padding: 12px 16px;
             border: 1px solid var(--border-color);
             background-color: var(--bg-light);
             color: var(--text-primary);
-            border-radius: 8px;
+            border-radius: 10px;
             outline: none;
-            font-size: 1rem;
-            transition: border-color 0.2s ease;
+            font-size: 0.95rem;
+            transition: all 0.25s ease;
         }
         .form-group input:focus, .form-group textarea:focus {
             border-color: var(--primary-blue);
-            box-shadow: 0 0 8px var(--glow-color);
+            background-color: var(--card-bg);
+            box-shadow: 0 0 10px var(--glow-color);
+        }
+        @media screen and (max-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+            .contact-card {
+                padding: 25px 20px;
+            }
         }
     </style>
 </head>
@@ -72,26 +135,51 @@
         </nav>
     </header>
 
-    <main class="contact-container animate-fade-in">
-        <h1 class="glow-text" style="text-align: center;">Get In Touch</h1>
-        <p class="subtitle" style="text-align: center;">Have a project or opportunity in mind? Send me a message!</p>
+    <main class="contact-page-wrapper animate-fade-in">
+        <div class="contact-card">
+            <h1 class="glow-text" style="font-size: 2rem; font-weight: 800;">Let's Build Something Together</h1>
+            <p class="subtitle" style="margin-bottom: 0;">Feel free to drop a message or reach out via my professional channels.</p>
 
-        <!-- FormSubmit Integration -->
-        <form class="contact-form" action="https://formsubmit.co/mohamedrafiqmt9@gmail.com" method="POST">
-            <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required>
+            <div class="contact-grid">
+                <!-- Left Column: Quick Info & Social Pills -->
+                <div class="contact-info">
+                    <h3>Direct Info</h3>
+                    <p>I am open to web development, data analytics, and digital content collaboration opportunities.</p>
+                    
+                    <div class="social-pills">
+                        <a href="mailto:mohamedrafiqmt9@gmail.com" class="social-pill">
+                            <span>📧</span> mohamedrafiqmt9@gmail.com
+                        </a>
+                        <a href="https://www.linkedin.com/in/mohamed-rafiq-m-221591351" target="_blank" rel="noopener noreferrer" class="social-pill">
+                            <span>💼</span> LinkedIn Profile ↗
+                        </a>
+                        <a href="https://github.com/mohamedrafiqm3-max" target="_blank" rel="noopener noreferrer" class="social-pill">
+                            <span>💻</span> GitHub Repository ↗
+                        </a>
+                        <a href="https://www.youtube.com/@RTechPhoenix-k5h" target="_blank" rel="noopener noreferrer" class="social-pill">
+                            <span>▶️</span> YouTube Channel ↗
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Form -->
+                <form class="contact-form" action="https://formsubmit.co/mohamedrafiqmt9@gmail.com" method="POST">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Your Message</label>
+                        <textarea id="message" name="message" rows="4" placeholder="How can I help you?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 6px; padding: 12px; font-size: 1rem;">Send Message 🚀</button>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Your Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
-            </div>
-            <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Send Message</button>
-        </form>
+        </div>
     </main>
 
     <footer>
