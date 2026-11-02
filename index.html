@@ -42,14 +42,16 @@
         </div>
     </div>
 
-    <!-- Hero Introduction Section -->
+    <!-- Hero Introduction Section with Typing Effect -->
     <section id="about" class="hero">
         <h1 class="glow-text">Hi, I'm Mohamed Rafiq.M</h1>
-        <p class="subtitle">[ B.Com (Computer Applications) Student ]</p>
+        <p class="subtitle">
+            [ <span class="typing-text" id="typingElement">B.Com (Computer Applications) Student</span><span class="typing-cursor"></span> ]
+        </p>
         <p class="hero-desc">"I bridge business management, data analytics, and web development to build smart, data-driven digital solutions and automated workflows."</p>
     </section>
 
-    <!-- Projects Grid Section with Interactive 3D Tilt Cards -->
+    <!-- Projects Grid Section with 3D Tilt Cards -->
     <section id="projects" class="projects-section">
         <h2 class="glow-title">Featured Work</h2>
         <div class="grid">
@@ -141,6 +143,35 @@
         <p><a href="https://www.linkedin.com/in/mohamed-rafiq-m-221591351" target="_blank" rel="noopener noreferrer">Connect on LinkedIn ↗</a></p>
     </footer>
 
+    <!-- Chatbot Floating Toggle Button -->
+    <button class="chat-toggle-btn pulse-glow" id="chatToggleBtn" aria-label="Open Chat">💬</button>
+
+    <!-- Chatbot Window -->
+    <div class="chat-window hidden" id="chatWindow">
+        <div class="chat-header">
+            <h4>Ask Rafiq's Assistant 🤖</h4>
+            <button class="chat-close-btn" id="chatCloseBtn">&times;</button>
+        </div>
+        
+        <div class="chat-body" id="chatBody">
+            <div class="chat-message bot">
+                Hi! 👋 I'm Mohamed Rafiq's Virtual Assistant. How can I help you today?
+            </div>
+            <div class="chat-chips" id="chatChips">
+                <button class="chip" onclick="handleChipClick('skills')">💻 Skills & Tools</button>
+                <button class="chip" onclick="handleChipClick('projects')">📁 Projects</button>
+                <button class="chip" onclick="handleChipClick('certificates')">📜 Certificates</button>
+                <button class="chip" onclick="handleChipClick('contact')">📬 Contact Info</button>
+                <button class="chip" onclick="handleChipClick('resume')">📄 Resume</button>
+            </div>
+        </div>
+
+        <form class="chat-input-area" id="chatForm">
+            <input type="text" id="chatInput" placeholder="Type a question..." autocomplete="off">
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
     <!-- Script Imports -->
     <script src="chatbot.js"></script>
     <script src="terminal-palette-tilt.js"></script>
@@ -155,6 +186,49 @@
                 navLinks.classList.toggle('open');
             });
         }
+
+        // Typing Text Loop Animation for Hero Section
+        const typingElement = document.getElementById('typingElement');
+        const phrases = [
+            "B.Com (Computer Applications) Student",
+            "Data Analytics Enthusiast",
+            "Full-Stack Web Developer",
+            "AI & Prompt Engineer"
+        ];
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeLoop() {
+            if (!typingElement) return;
+
+            const currentPhrase = phrases[phraseIndex];
+            
+            if (isDeleting) {
+                typingElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            let typeSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex === currentPhrase.length) {
+                typeSpeed = 2200;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typeSpeed = 500;
+            }
+
+            setTimeout(typeLoop, typeSpeed);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(typeLoop, 800);
+        });
     </script>
 </body>
 </html>
