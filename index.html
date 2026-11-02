@@ -14,11 +14,11 @@
     <header class="main-header">
         <div class="logo">Mohamed Rafiq.M</div>
         
-        <!-- Mobile Menu Toggle Button -->
-        <button class="mobile-menu-btn" onclick="toggleMobileMenu()" aria-label="Toggle Navigation Menu">
-            <span></span>
-            <span></span>
-            <span></span>
+        <!-- Mobile Navigation Hamburger Toggle -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
         </button>
 
         <nav class="nav-links" id="navLinks">
@@ -145,12 +145,15 @@
     <script src="chatbot.js"></script>
     <script src="terminal-palette-tilt.js"></script>
     <script>
-        // Mobile Menu Toggle Handler
-        function toggleMobileMenu() {
-            const navLinks = document.getElementById('navLinks');
-            const menuBtn = document.querySelector('.mobile-menu-btn');
-            navLinks.classList.toggle('open');
-            menuBtn.classList.toggle('active');
+        // Hamburger Menu Drawer Toggle
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                menuBtn.classList.toggle('active');
+                navLinks.classList.toggle('open');
+            });
         }
     </script>
 </body>
