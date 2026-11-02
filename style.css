@@ -17,7 +17,10 @@
     font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
 }
 
-html {
+html, body {
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
@@ -25,7 +28,6 @@ body {
     background-color: var(--bg-light);
     color: var(--text-primary);
     line-height: 1.7;
-    overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
 
@@ -36,17 +38,19 @@ header.main-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 16px 8%;
+    padding: 14px 5%;
     border-bottom: 1px solid var(--border-color);
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
 }
 
 header .logo {
     font-weight: 800;
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-size: clamp(1.1rem, 4vw, 1.35rem);
     color: var(--primary-blue);
+    white-space: nowrap;
 }
 
 nav.nav-links {
@@ -55,20 +59,19 @@ nav.nav-links {
     gap: 20px;
 }
 
-nav a {
+nav.nav-links a {
     text-decoration: none;
     color: var(--text-secondary);
     font-weight: 600;
     font-size: 1rem;
     transition: all 0.3s ease;
-    position: relative;
 }
 
-nav a:hover, nav a.active {
+nav.nav-links a:hover, nav.nav-links a.active {
     color: var(--primary-blue);
 }
 
-/* Header Action Buttons (Terminal & Search Badges) */
+/* Header Action Tools */
 .nav-tools {
     display: flex;
     align-items: center;
@@ -79,7 +82,7 @@ nav a:hover, nav a.active {
     background: #0f172a;
     color: #38bdf8;
     border: 1px solid #1e293b;
-    padding: 6px 14px;
+    padding: 5px 12px;
     border-radius: 6px;
     font-family: monospace;
     font-size: 0.9rem;
@@ -92,64 +95,60 @@ nav a:hover, nav a.active {
 .terminal-toggle-btn:hover {
     background: #1e293b;
     color: #4ade80;
-    box-shadow: 0 0 12px rgba(74, 222, 128, 0.3);
 }
 
 .cmd-badge {
     background: #f1f5f9;
     border: 1px solid var(--border-color);
     color: var(--text-secondary);
-    padding: 5px 9px;
+    padding: 4px 8px;
     border-radius: 6px;
     font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
-    transition: all 0.2s ease;
 }
 
-.cmd-badge:hover {
-    border-color: var(--primary-blue);
-    color: var(--primary-blue);
-}
-
-/* Mobile Hamburger Menu Icon */
+/* Mobile Menu Toggle Button (Hamburger) */
 .mobile-menu-btn {
     display: none;
     flex-direction: column;
-    gap: 5px;
+    justify-content: space-between;
+    width: 26px;
+    height: 19px;
     background: transparent;
     border: none;
     cursor: pointer;
-    padding: 4px;
     z-index: 1001;
+    padding: 0;
 }
 
-.mobile-menu-btn span {
-    width: 25px;
+.mobile-menu-btn .bar {
+    width: 100%;
     height: 3px;
     background-color: var(--text-primary);
     border-radius: 2px;
     transition: all 0.3s ease;
 }
 
-.mobile-menu-btn.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 6px);
+.mobile-menu-btn.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
 }
 
-.mobile-menu-btn.active span:nth-child(2) {
+.mobile-menu-btn.active .bar:nth-child(2) {
     opacity: 0;
 }
 
-.mobile-menu-btn.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -6px);
+.mobile-menu-btn.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Profile Picture & Shimmer Ring */
+/* Profile Picture & Ring */
 .profile-container {
     text-align: center;
-    margin: 40px auto 10px;
+    margin: 30px auto 10px;
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 .profile-ring {
@@ -157,12 +156,11 @@ nav a:hover, nav a.active {
     border-radius: 50%;
     background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
     box-shadow: 0 0 15px rgba(2, 132, 199, 0.25);
-    transition: all 0.4s ease;
 }
 
 .profile-pic {
-    width: clamp(120px, 18vw, 160px);
-    height: clamp(120px, 18vw, 160px);
+    width: clamp(110px, 25vw, 150px);
+    height: clamp(110px, 25vw, 150px);
     object-fit: cover;
     border-radius: 50%;
     border: 3px solid #ffffff;
@@ -172,51 +170,52 @@ nav a:hover, nav a.active {
 /* Hero Section */
 .hero {
     text-align: center;
-    padding: 20px 20px 40px;
+    padding: 20px 16px 40px;
     max-width: 850px;
     margin: 0 auto;
+    word-wrap: break-word;
 }
 
 .hero h1.glow-text {
-    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    font-size: clamp(1.6rem, 5vw, 2.6rem);
     font-weight: 800;
     margin-bottom: 8px;
     color: var(--text-primary);
+    line-height: 1.25;
 }
 
 .subtitle {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    font-size: clamp(0.95rem, 3vw, 1.15rem);
     color: var(--primary-blue);
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
 }
 
 .hero-desc {
-    font-size: clamp(1rem, 2vw, 1.15rem);
+    font-size: clamp(0.95rem, 2.5vw, 1.15rem);
     color: var(--text-secondary);
     max-width: 700px;
     margin: 0 auto;
 }
 
-/* Projects Section & 3D Tilt Cards */
+/* Projects Section */
 .projects-section {
-    padding: 40px 6%;
+    padding: 40px 5%;
     max-width: 1300px;
     margin: 0 auto;
 }
 
 .projects-section h2.glow-title {
     text-align: center;
-    margin-bottom: 35px;
-    font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+    margin-bottom: 30px;
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
     font-weight: 800;
 }
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
-    gap: 25px;
-    perspective: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
 }
 
 .card {
@@ -228,18 +227,11 @@ nav a:hover, nav a.active {
     justify-content: space-between;
     border: 1px solid var(--border-color);
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04);
-    transform-style: preserve-3d;
-    transition: transform 0.15s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
-}
-
-.card:hover {
-    border-color: var(--primary-blue);
-    box-shadow: 0 14px 35px rgba(2, 132, 199, 0.2), 0 0 20px rgba(8, 145, 178, 0.15);
 }
 
 .card-img-wrapper {
     width: 100%;
-    height: 180px;
+    height: 170px;
     border-radius: 10px;
     overflow: hidden;
     margin-bottom: 16px;
@@ -250,7 +242,6 @@ nav a:hover, nav a.active {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top center;
 }
 
 .card-content {
@@ -260,7 +251,7 @@ nav a:hover, nav a.active {
 .card h3 {
     margin-bottom: 10px;
     color: var(--text-primary);
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 700;
 }
 
@@ -268,29 +259,25 @@ nav a:hover, nav a.active {
     color: var(--text-secondary);
     margin-bottom: 20px;
     font-size: 0.95rem;
-    line-height: 1.6;
 }
 
 .card-actions {
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
-    margin-top: auto;
 }
 
 .btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: 10px 18px;
+    padding: 10px 16px;
     background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
     color: #ffffff;
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
-    font-size: 0.92rem;
-    transition: all 0.3s ease;
-    border: none;
+    font-size: 0.9rem;
     flex: 1 1 auto;
     text-align: center;
 }
@@ -301,265 +288,34 @@ nav a:hover, nav a.active {
     border: 2px solid var(--primary-blue);
 }
 
-.btn-outline:hover {
-    background: var(--primary-blue);
-    color: #ffffff;
-}
-
-/* ==========================================================================
-   Terminal Window Styles
-   ========================================================================== */
+/* Terminal Window Constraints */
 .terminal-window {
     position: fixed;
-    bottom: 25px;
-    left: 25px;
-    width: 480px;
-    max-width: calc(100vw - 50px);
-    height: 320px;
+    bottom: 20px;
+    left: 5%;
+    width: 90%;
+    max-width: 480px;
+    height: 300px;
     background-color: #090d16;
     border: 1px solid #1e293b;
     border-radius: 10px;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5), 0 0 15px rgba(56, 189, 248, 0.2);
+    z-index: 1050;
     display: flex;
     flex-direction: column;
-    z-index: 1050;
-    font-family: 'Courier New', Courier, monospace;
-    overflow: hidden;
-    transition: all 0.3s ease;
 }
 
 .terminal-window.hidden {
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(20px) scale(0.95);
-    pointer-events: none;
+    display: none;
 }
 
-.terminal-header {
-    background-color: #0f172a;
-    padding: 10px 14px;
-    display: flex;
-    align-items: center;
-    border-bottom: 1px solid #1e293b;
-}
-
-.terminal-dots {
-    display: flex;
-    gap: 6px;
-}
-
-.terminal-dots .dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    cursor: pointer;
-}
-
-.dot.red { background-color: #ef4444; }
-.dot.yellow { background-color: #f59e0b; }
-.dot.green { background-color: #10b981; }
-
-.terminal-title {
-    color: #94a3b8;
-    font-size: 0.8rem;
-    margin-left: auto;
-    margin-right: auto;
-    font-weight: 600;
-}
-
-.terminal-body {
-    flex: 1;
-    padding: 12px;
-    overflow-y: auto;
-    color: #f8fafc;
-    font-size: 0.88rem;
-    line-height: 1.45;
-}
-
-.term-line { margin-bottom: 4px; }
-.term-line.system { color: #38bdf8; font-weight: bold; }
-.term-line.user-cmd { color: #facc15; }
-.term-line.error { color: #f87171; }
-.term-cmd { color: #4ade80; font-weight: bold; }
-
-.terminal-input-row {
-    display: flex;
-    align-items: center;
-    padding: 8px 12px;
-    background-color: #0f172a;
-    border-top: 1px solid #1e293b;
-}
-
-.prompt-symbol {
-    color: #4ade80;
-    font-size: 0.85rem;
-    margin-right: 8px;
-    font-weight: bold;
-}
-
-.terminal-input-row input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    outline: none;
-    color: #ffffff;
-    font-family: inherit;
-    font-size: 0.9rem;
-}
-
-/* ==========================================================================
-   Command Palette (Ctrl+K) Styles
-   ========================================================================== */
-.cmd-palette-modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: 2000;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding-top: 80px;
-    opacity: 0;
-    visibility: hidden;
-    transition: all 0.2s ease;
-}
-
-.cmd-palette-modal.active {
-    opacity: 1;
-    visibility: visible;
-}
-
-.cmd-palette-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(15, 23, 42, 0.6);
-    backdrop-filter: blur(4px);
-}
-
-.cmd-palette-box {
-    position: relative;
-    width: 600px;
-    max-width: 92vw;
-    background: #ffffff;
-    border-radius: 12px;
-    border: 1px solid var(--border-color);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    z-index: 10;
-}
-
-.cmd-palette-header {
-    display: flex;
-    align-items: center;
-    padding: 14px 18px;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.cmd-icon {
-    font-size: 1.1rem;
-    margin-right: 10px;
-}
-
-.cmd-palette-header input {
-    flex: 1;
-    border: none;
-    outline: none;
-    font-size: 1rem;
-    color: var(--text-primary);
-    font-weight: 500;
-}
-
-.cmd-shortcut {
-    background: #f1f5f9;
-    border: 1px solid var(--border-color);
-    padding: 2px 6px;
-    border-radius: 4px;
-    font-size: 0.75rem;
-    color: #64748b;
-}
-
-.cmd-palette-results {
-    max-height: 300px;
-    overflow-y: auto;
-    padding: 8px 0;
-}
-
-.cmd-item {
-    padding: 12px 18px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    transition: background 0.15s ease;
-}
-
-.cmd-item:hover, .cmd-item.selected {
-    background: #f8fafc;
-}
-
-.cmd-item-title {
-    font-weight: 600;
-    color: var(--text-primary);
-    font-size: 0.95rem;
-}
-
-.cmd-item-badge {
-    background: #e0f2fe;
-    color: var(--primary-blue);
-    padding: 3px 8px;
-    border-radius: 12px;
-    font-size: 0.75rem;
-    font-weight: 700;
-}
-
-.cmd-no-results {
-    padding: 20px;
-    text-align: center;
-    color: var(--text-secondary);
-    font-size: 0.95rem;
-}
-
-.cmd-palette-footer {
-    background: #f8fafc;
-    padding: 10px 18px;
-    border-top: 1px solid var(--border-color);
-    display: flex;
-    gap: 15px;
-    font-size: 0.8rem;
-    color: #64748b;
-}
-
-/* Chatbot Floating Button & Footer */
-.chat-toggle-btn {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--primary-blue), var(--accent-cyan));
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-    font-size: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    box-shadow: 0 6px 20px rgba(2, 132, 199, 0.4);
-}
-
+/* Footer */
 footer {
     background: #0f172a;
     color: #f8fafc;
     text-align: center;
-    padding: 45px 20px;
-    margin-top: 60px;
+    padding: 40px 20px;
+    margin-top: 50px;
+    width: 100%;
 }
 
 footer a {
@@ -568,27 +324,30 @@ footer a {
 }
 
 /* ==========================================================================
-   Responsive Mobile Media Queries
+   Mobile Responsive Breakpoint (Under 768px)
    ========================================================================== */
-@media (max-width: 768px) {
+@media screen and (max-width: 768px) {
     .mobile-menu-btn {
         display: flex;
     }
 
     nav.nav-links {
         position: fixed;
-        top: 65px;
+        top: 0;
         right: -100%;
-        width: 100%;
-        height: calc(100vh - 65px);
+        width: 75vw;
+        max-width: 300px;
+        height: 100vh;
         background: rgba(255, 255, 255, 0.98);
         backdrop-filter: blur(15px);
         flex-direction: column;
         justify-content: flex-start;
-        padding-top: 50px;
-        gap: 25px;
-        transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.1);
+        align-items: flex-start;
+        padding: 80px 30px 30px;
+        gap: 22px;
+        transition: right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+        border-left: 1px solid var(--border-color);
     }
 
     nav.nav-links.open {
@@ -596,24 +355,20 @@ footer a {
     }
 
     nav.nav-links a {
-        font-size: 1.25rem;
+        font-size: 1.15rem;
+        width: 100%;
     }
 
     .nav-tools {
         margin-top: 15px;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    .terminal-window {
-        left: 5%;
-        width: 90%;
-        bottom: 90px;
+        width: 100%;
     }
 
     .cmd-badge {
         display: none;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
     }
 }
