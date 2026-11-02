@@ -11,11 +11,25 @@
 <body>
     <header class="main-header">
         <div class="logo">My Portfolio</div>
-        <nav>
+        
+        <!-- Mobile Navigation Hamburger Toggle -->
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+
+        <nav class="nav-links" id="navLinks">
             <a href="index.html">Home</a>
             <a href="about.html" class="active">About</a>
             <a href="certificate.html">Certificate</a>
             <a href="contact.html">Contact</a>
+
+            <!-- Developer Tools Header Actions -->
+            <div class="nav-tools">
+                <button class="terminal-toggle-btn" onclick="toggleTerminal()" title="Toggle Developer Terminal Mode">&gt;_</button>
+                <span class="cmd-badge" onclick="toggleCommandPalette(true)">Ctrl + K</span>
+            </div>
         </nav>
     </header>
 
@@ -98,7 +112,20 @@
         </form>
     </div>
 
-    <!-- Script Import -->
+    <!-- Script Imports -->
     <script src="chatbot.js"></script>
+    <script src="terminal-palette-tilt.js"></script>
+    <script>
+        // Mobile Hamburger Drawer Toggle
+        const menuBtn = document.getElementById('mobileMenuBtn');
+        const navLinks = document.getElementById('navLinks');
+
+        if (menuBtn) {
+            menuBtn.addEventListener('click', () => {
+                menuBtn.classList.toggle('active');
+                navLinks.classList.toggle('open');
+            });
+        }
+    </script>
 </body>
 </html>
